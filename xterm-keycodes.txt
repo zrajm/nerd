@@ -1,0 +1,13 @@
+xterm:
+
+  Pilar:             Shift+pilar:    
+     upp     ^[[A	      upp     ^[[2A
+     ner     ^[[B	      ner     ^[[2B
+     höger   ^[[C	      höger   ^[[2C
+     vänster ^[[D	      vänster ^[[2D
+
+  Kontroll+pilar:    Kontroll+shift+pilar 
+     upp     ^[[5A      upp     ^[[6A     
+     ner     ^[[5B      ner     ^[[6B     
+     höger   ^[[5C      höger   ^[[6C     
+     vänster ^[[5D      vänster ^[[6D     
