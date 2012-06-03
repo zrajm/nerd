@@ -1,0 +1,184 @@
+* {
+  font-family: Georgia, serif;
+  line-height: 1.5em;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: #ccc;
+}
+
+body {
+  /* background: url(pic/grid.png); */
+  font-size: 1em;
+  background-color: #fff;
+  padding: 1.5em 3em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 30em;
+  text-rendering: optimizeLegibility;
+  box-shadow: 0 0 20em #000;
+  /* word-spacing: .2ex; */
+}
+
+a:hover {
+  background-color: #ff8;
+}
+
+p {
+  font-size: 1em;
+}
+
+p + p {
+  text-indent: 1.5em;
+}
+
+p.speech {
+  text-indent: .3em;
+}
+
+p.speech:before {
+  content: "\2013\2002";
+}
+
+h1, h2, h3 {
+  font-family: Verdana, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 1.25em;
+  padding-top: 1.4em;
+  padding-bottom: 0.35em;
+  word-spacing: -0.05ex;
+  letter-spacing: -0.05ex;
+}
+
+h2 {
+  font-size: 1.6em;
+  line-height: 1.35em;
+  padding-top: 1.17em;
+  padding-bottom: 0.2925em;
+  word-spacing: -0.025ex;
+  letter-spacing: -0.025ex;
+}
+
+h3 {
+  font-size: 1.2em;
+  line-height: 1.5em;
+  padding-top: 0.8em;
+  padding-bottom: 0.2em;
+  word-spacing: -0.0125ex;
+  letter-spacing: -0.0125ex;
+}
+
+ol.abc {
+  counter-reset: list;
+  list-style: none;
+}
+
+ol.abc li:before {
+  content: counter(list, lower-alpha) ") ";
+  counter-increment: list;
+}
+
+ol.number {
+  counter-reset: list;
+  list-style: none;
+}
+
+ol.number li:before {
+  content: counter(list) ") ";
+  counter-increment: list;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 1.5em;
+}
+
+
+/******************************************************************************/
+
+table {
+  margin: 1.5em 0em;
+}
+table td {
+  vertical-align: text-top;
+}
+ul {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  padding-left: 1.5em;
+}
+ul ul {
+  margin-top: .75em;
+  margin-bottom: .75em;
+}
+
+small {
+  font-size: .9em;
+  line-height: 1.5em;
+}
+
+.top {
+  padding-top: 2.25em;
+}
+
+.bottom {
+  padding-bottom: 2.25em;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+table.center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+.nowrap {
+  white-space: nowrap;
+}
+
+.blankline {
+  text-indent: 0em;
+  margin-top: 1.5em;
+}
+
+/* = LINKS TO SCANS */
+.image {
+  background-color: #ff8; /* light yellow */
+  border: .15em solid black;
+  clear: right;
+  float: right;
+  margin: .75em 0em .75em .75em;  /* top right bottom left */
+  text-align: center;
+}
+.image img {
+  border-width: .15em;
+  display: block;
+  margin: .45em;
+}
+
+.title {
+  clear: right;
+  margin-bottom: 1.5em;
+}
+
+/* eof */
