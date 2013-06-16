@@ -1,0 +1,121 @@
+
+table u {
+    font-size: 50%;
+}
+u {
+    border-top: .125em solid #000;
+    text-decoration: none;
+}
+
+#status {
+    background-color: #d3d3d3;
+    bottom: 0;
+    display: none;
+    font-size: 200%;
+    left: 0;
+    margin: 0;
+    padding: .25em .5em;
+    position: fixed;
+}
+
+table #a div { font-size:  300% }
+table #b div { font-size:  300% }
+table #c div { font-size:  300% }
+table #d div { font-size:  300% }
+table #e div { font-size:  300% }
+table #f div { font-size:  300% }
+table #g div { font-size:  300% }
+
+/*
+table #a div { font-size: 3200% }
+table #b div { font-size: 1600% }
+table #c div { font-size:  800% }
+table #d div { font-size:  400% }
+table #e div { font-size:  200% }
+table #f div { font-size:  100% }
+table #g div { font-size:   50% }
+*/
+
+#panel {
+    display: none;
+    text-align: center;
+}
+
+table div[class] {
+    font-style: italic;
+    color: #666;
+}
+
+table div.pro {
+    font-style: normal;
+    color: #000;
+}
+
+table .xxy {
+    background-color: #d3d3d3;
+    font-style: italic;
+}
+table i {
+  color: #666;
+}
+body {
+  font-family: sans;
+}
+table {
+  border-collapse: collapse;
+  margin: 1em auto;
+}
+table td, table th {
+  border: 1px solid #000;
+  font-weight: normal;
+  min-width: .2em;
+  text-align: center;
+}
+table td[id], label:hover {
+    cursor: pointer;
+}
+.even {
+  background-color: #fff;
+}
+.odd {
+  background-color: #ff0;
+}
+.copyright {
+  margin: 1em 5em;
+  font-size: small;
+  text-align: center;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: .5em 0;
+}
+.copyright a, .copyright time {
+  font-style: italic;
+}
+
+.hidden {
+    display: none;
+}
+
+.empty {
+    visibility: hidden;
+}
+
+.floatright {
+    float: right;
+    padding-right: .25em;
+}
+.floatleft {
+    float: left;
+    padding-left: .25em;
+}
+
+#player {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+}
+
+/*[eof]*/

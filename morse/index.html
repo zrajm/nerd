@@ -1,0 +1,1046 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Morse Code Binary Table-Thingy</title>
+  <link rel=stylesheet href="main.css">
+</head>
+<body>
+  <p id=status>
+  <div id=player></div>
+
+  <h1>Morse Code Binary Table-Thingy</h1>
+
+  <p>Read table vertically. Yellow background means <i>long,</i> white
+    means <i>short.</i>
+
+  <p>I.e. all characters that are located beneath “e” on the first line start
+    of with a short beep, and the characters that are found under “t” starts
+    with a long beep. To find out Morse code for “b”, draw a vertical line from
+    amove, and see which squares it passes through, a yellow square (“t” = long
+    beep) is passed through, then three white squares (“n”, “d” och “b” = three
+    short beeps). “B” is therefore: -...
+
+  <p id=panel><b>Show:</b>
+    <label>
+      <input class=charset type=checkbox id=eo>Esperanto
+      <span class=hidden>Esperanto
+        <br>ĉ -.-..
+        <br>ĝ --.-.
+        <br>ĥ ----
+        <br>ĵ .---.
+        <br>ŝ ...-.
+      </span>
+    </label>
+    <label>
+      <input class=charset type=checkbox id=de>German
+      <span class=hidden>German
+        <br>ch ---- (literal “ch” is now usually used instead)
+        <br>ß ...--.. (literal “ss” is now usually used instead)
+        <br>ü ..--
+      </span>
+    </label>
+    <label>
+      <input class=charset type=checkbox id=is>Icelandic
+      <span class=hidden>Icelandic
+        <br>ð ..--.
+        <br>þ .--..
+      </span>
+    </label>
+    <label>
+      <input class=charset type=checkbox id=it>Italian
+      <span class=hidden>Italian
+        <br>ó ---.
+      </span>
+    </label>
+    <label>
+      <input class=charset type=checkbox id=pl>Polish
+      <span class=hidden>Polish
+        <br>ą .-.-
+        <br>ć -.-..
+        <br>ę ..-..
+        <br>ł .-..-
+        <br>ń --.--
+        <br>ó ---.
+        <br>ś ...-...
+        <br>ż --..-
+        <br>ź --..-.
+      </span>
+    </label>
+    <label>
+      <input class=charset type=checkbox id=es>Portuguese / Spanish
+      <span class=hidden>Portuguese / Spanish
+        <br>ch ----
+        <br>ñ --.--
+        <br>¿ ..-.-
+        <br>¡ --...-
+      </span>
+    </label>
+    <label>
+      <input class=charset type=checkbox id=sv checked >Swedish
+      <span class=hidden>Swedish
+        <br>é ..-..
+        <br>ç -.-..
+        <br>ñ --.--
+        <br>š ----
+        <br>ß ...--..
+        <br>ü ..--
+        <br>å .--.-
+        <br>ä .-.-
+        <br>ö ---.
+        <br>! ..--.
+        <br>% .--..
+      </span>
+    </label>
+    <br>
+    <label>
+      <input class=charset type=checkbox id=pro>Prosigns
+      <span class=hidden>Prosigns
+        <br>Have special meanings for radio. Written with dash above
+        (e.g. <u>SN</u>) and signaled without extra space between letters.
+      </span>
+    </label>
+    <label>
+      <input class=charset type=checkbox id=misc>Misc. other symbols
+      <span class=hidden>Misc. other symbols
+        <br>ŭ ..--
+        <br>æ .-.-
+        <br>ø ---.
+        <br>đ ..-..
+        <br># .-..-
+        <br>è .-..-
+        <br>à .--.-
+        <br>) -...-
+        <br>; -.-.-.
+        <br>! -.-.-- (American)
+        <br>$ ...-..-
+      </span>
+    </label>
+    <button>Invert</button>
+    <label>
+      <input type=checkbox id=empty>Empty cells
+      <span class=hidden>Empty cells
+        <br>Cells without assigned characters.
+      </span>
+    </label>
+
+<table>
+  <tr id=a>
+    <td class=even colspan=64 id=dit>
+      <sup class=floatleft>(short)</sup>
+      <div>e</div>
+      <span class=hidden>. E</span>
+    </td>
+    <td class=odd colspan=64 id=dah>
+      <sup class=floatright>(long)</sup>
+      <div>t</div>
+      <span class=hidden>- T</span>
+    </td>
+  </tr>
+  <tr id=b>
+    <td class=even colspan=32 id=didit>
+      <div>i</div>
+      <span class=hidden>.. I</span>
+    </td>
+    <td class=odd colspan=32 id=didah>
+      <div>a</div>
+      <span class=hidden>.- A</span>
+    </td>
+    <td class=even colspan=32 id=dadit>
+      <div>n</div>
+      <span class=hidden>-. N</span>
+    </td>
+    <td class=odd colspan=32 id=dadah>
+      <div>m</div>
+      <span class=hidden>-- M</span>
+    </td>
+  </tr>
+  <tr id=c>
+    <td class=even colspan=16 id=dididit>
+      <div>s</div>
+      <span class=hidden>... S</span>
+    </td>
+    <td class=odd colspan=16 id=dididah>
+      <div>u</div>
+      <span class=hidden>..- U</span>
+    </td>
+    <td class=even colspan=16 id=didadit>
+      <div>r</div>
+      <span class=hidden>.-. R</span>
+    </td>
+    <td class=odd colspan=16 id=didadah>
+      <div>w</div>
+      <span class=hidden>.-- W</span>
+    </td>
+    <td class=even colspan=16 id=dadidit>
+      <div>d</div>
+      <span class=hidden>-.. D</span>
+    </td>
+    <td class=odd colspan=16 id=dadidah>
+      <div>k</div>
+      <div class=pro><u>K</u></div>
+      <span class=hidden>-.- K, <u>K</u> <i>Invitation to transmit</i>
+        (Mnemonic: “oK, go ahead”)')</span>
+    </td>
+    <td class=even colspan=16 id=dadadit>
+      <div>g</div>
+      <span class=hidden>--. G</span>
+    </td>
+    <td class=odd colspan=16 id=dadadah>
+      <div>o</div>
+      <span class=hidden>--- O</span>
+    </td>
+  </tr>
+  <tr id=d>
+    <td class=even colspan=8 id=didididit>
+      <div>h</div>
+      <span class=hidden>.... H</span>
+    </td>
+    <td class=odd colspan=8 id=didididah>
+      <div>v</div>
+      <span class=hidden>...- V</span>
+    </td>
+    <td class=even colspan=8 id=dididadit>
+      <div>f</div>
+      <span class=hidden>..-. F</span>
+    </td>
+    <td class="odd hideable" colspan=8 id=dididadah>
+      <div class="de sv">ü</div>
+      <div class=misc>ŭ</div>
+      <span class=hidden>..-- Ü (German, Swedish), Ŭ (FIXME)</span>
+    </td>
+    <td class=even colspan=8 id=didadidit>
+      <div>l</div>
+      <span class=hidden>.-.. L</span>
+    </td>
+    <td class="odd hideable" colspan=8 id=didadidah>
+      <div class=sv>ä</div>
+      <div class="misc FIXME">æ</div>
+      <div class=pl>ą</div>
+      <span class=hidden>.-.- Ä (Swedish), Æ (FIXME), Ą (Polish)</span>
+    </td>
+    <td class=even colspan=8 id=didadadit>
+      <div>p</div>
+      <span class=hidden>.--. P</span>
+    </td>
+    <td class=odd colspan=8 id=didadadah>
+      <div>j</div>
+      <span class=hidden>.--- J</span>
+    </td>
+    <td class=even colspan=8 id=dadididit>
+      <div>b</div>
+      <span class=hidden>-... B</span>
+    </td>
+    <td class=odd colspan=8 id=dadididah>
+      <div>x</div>
+      <span class=hidden>-..- X, Multiplication sign</span>
+    </td>
+    <td class=even colspan=8 id=dadidadit>
+      <div>c</div>
+      <span class=hidden>-.-. C</span>
+    </td>
+    <td class=odd colspan=8 id=dadidadah>
+      <div>y</div>
+      <span class=hidden>-.-- Y</span>
+    </td>
+    <td class=even colspan=8 id=dadadidit>
+      <div>z</div>
+      <span class=hidden>--.. Z</span>
+    </td>
+    <td class=odd colspan=8 id=dadadidah>
+      <div>q</div>
+      <span class=hidden>--.- Q</span>
+    </td>
+    <td class="even hideable" colspan=8 id=dadadadit>
+      <div class=sv>ö</div>
+      <div class="misc FIXME">ø</div>
+      <div class="it pl">ó</div>
+      <span class=hidden>---. Ö (Swedish), Ø (FIXME), Ó (Italian,
+        Polish)</span>
+    </td>
+    <td class="odd hideable" colspan=8 id=dadadadah>
+      <div class=sv>š</div>
+      <div class="es pt">ch</div>
+      <div class=eo>ĥ</div>
+      <span class=hidden>---- š (Swedish), ch (Portuguese, Spanish), Ĥ
+        (Esperanto)</span>
+    </td>
+  </tr>
+  <tr id=e>
+    <td class=even colspan=4 id=dididididit>
+      <div>5</div>
+      <span class=hidden>..... Five</span>
+    </td>
+    <td class=odd colspan=4 id=dididididah>
+      <div>4</div>
+      <span class=hidden>....- Four</span>
+    </td>
+    <td class="even hideable" colspan=4 id=didididadit>
+      <div class=eo>ŝ</div>
+      <div class=pro><u>SN</u></div>
+      <span class=hidden>...-. Ŝ (Esperanto), <u>SN</u>
+        (or <u>VE</u>) <i>Understood</i> (Mnemonic: “Sho’
+        ’Nuff”)</span>
+    </td>
+    <td class=odd colspan=4 id=didididadah>
+      <div>3</div>
+      <span class=hidden>...-- Three</span>
+    </td>
+    <td class="even hideable" colspan=4 id=dididadidit>
+      <div class=sv>é</div>
+      <div class="misc FIXME">đ</div>
+      <div class=pl>ę</div>
+      <span class=hidden>..-.. É (Swedish), Đ (FIXME), Ę (Polish)</span>
+    </td>
+    <td class="odd hideable" colspan=4 id=dididadidah>
+      <div class="es pt">¿</div>
+      <span class=hidden>..-.- Inverted question mark (Portuguese,
+        Spanish)</span>
+    </td>
+    <td class="even hideable" colspan=4 id=dididadadit>
+      <div class=sv>!</div>
+      <div class=is>ð</div>
+      <span class=hidden>..--. Exclamation mark (Swedish), Ð (Icelandic)</span>
+    </td>
+    <td class=odd colspan=4 id=dididadadah>
+      <div>2</div>
+      <span class=hidden>..--- Two</span>
+    </td>
+    <td class=even colspan=4 id=didadididit>
+      <div>&amp;</div>
+      <div class=pro><u>AS</u></div>
+      <span class=hidden>.-... Ampersand, <u>AS</u> <i>Wait (for 10
+          seconds)</i> (Mnemonic: “wait A Sec” or “AmperSand”)</span>
+    </td>
+    <td class="odd hideable" colspan=4 id=didadididah>
+      <div class="misc FIXME">#</div>
+      <div class="misc FIXME">è</div>
+      <div class=pl>ł</div>
+      <span class=hidden>.-..- Separator (Swedish), È (FIXME), Ł
+        (Polish)</span>
+    </td>
+    <td class=even colspan=4 id=didadidadit>
+      <div>+</div>
+      <div class=pro><u>AR</u></div>
+      <span class=hidden>.-.-. Cross or addition sign, <u>AR</u> <i>Stop (end
+          of message)</i> (Mnemonic: “All Received”)</span>
+    </td>
+    <td class="odd empty" colspan=4 id=didadidadah>
+      <span class=hidden>.-.--</span>
+    </td>
+    <td class="even hideable" colspan=4 id=didadadidit>
+      <div class=sv>%</div>
+      <div class=is>þ</div>
+      <span class=hidden>.--.. % (Swedish), Þ (Icelandic)</span>
+    </td>
+    <td class="odd hideable" colspan=4 id=didadadidah>
+      <div class=sv>å</div>
+      <div class=misc>à</div>
+      <span class=hidden>.--.- å (Swedish), à (FIXME)</span>
+    </td>
+    <td class="even hideable" colspan=4 id=didadadadit>
+      <div class=eo>ĵ</div>
+      <span class=hidden>.---. ĵ (Esperanto)</span>
+    </td>
+    <td class=odd colspan=4 id=didadadadah>
+      <div>1</div>
+      <span class=hidden>.---- One</span>
+    </td>
+    <td class=even colspan=4 id=dadidididit>
+      <div>6</div>
+      <span class=hidden>-.... Six</span>
+    </td>
+    <td class=odd colspan=4 id=dadidididah>
+      <div>=</div>
+      <div class="misc FIXME">)</div>
+      <div class=pro><u>BT</u></div>
+      <span class=hidden>-...- Double hyphen, <u>BT</u>
+        (or <u>TV</u>) <i>Separator within message</i></span>
+    </td>
+    <td class=even colspan=4 id=dadididadit>
+      <div>/</div>
+      <span class=hidden>-..-. Fraction bar or division sign</span>
+    </td>
+    <td class="odd empty" colspan=4 id=dadididadah>
+      <span class=hidden>-..--</span>
+    </td>
+    <td class="even hideable" colspan=4 id=dadidadidit>
+      <div class=sv>ç</div>
+      <div class=eo>ĉ</div>
+      <div class=pl>ć</div>
+      <span class=hidden>-.-.. ç (Swedish), ĉ (Esperanto), ć (Polish)</span>
+    </td>
+    <td class="odd hideable" colspan=4 id=dadidadidah>
+      <div class=pro><u>CT</u></div>
+      <span class=hidden>-.-.- <u>CT</u> (or <u>KA</u>) <i>Start (beginning of
+          message)</i> (Mnemonic: “Commence Transmission”)</span>
+    </td>
+    <td class=even colspan=4 id=dadidadadit>
+      <div>(</div>
+      <div class=eo>ĥ</div>
+      <div class=pro><u>KN</u></div>
+      <span class=hidden>-.--. Left-hand bracket (parenthesis), Ĥ (Esperanto,
+        obsolete), <u>KN</u> <i>Invitation to specific station to transmit</i>
+        (Mnemonic: “oK, Named station”)</span>
+    </td>
+    <td class="odd empty" colspan=4 id=dadidadadah>
+      <span class=hidden>-.---</span>
+    </td>
+    <td class=even colspan=4 id=dadadididit>
+      <div>7</div>
+      <span class=hidden>--... Seven</span>
+    </td>
+    <td class="odd hideable" colspan=4 id=dadadididah>
+      <div class=pl>ż</div>
+      <span class=hidden>--..- Ż (Polish)</span>
+    </td>
+    <td class="even hideable" colspan=4 id=dadadidadit>
+      <div class=eo>ĝ</div>
+      <span class=hidden>--.-. ĝ (Esperanto)</span>
+    </td>
+    <td class="odd hideable" colspan=4 id=dadadidadah>
+      <div class="es pt sv">ñ</div>
+      <div class=pl>ń</div>
+      <span class=hidden>--.-- ñ (Portuguese, Spanish, Swedish), ń
+        (Polish)</span>
+    </td>
+    <td class=even colspan=4 id=dadadadidit>
+      <div>8</div>
+      <span class=hidden>---.. Eight</span>
+    </td>
+    <td class="odd empty" colspan=4 id=dadadadidah>
+      <span class=hidden>---.-</span>
+    </td>
+    <td class=even colspan=4 id=dadadadadit>
+      <div>9</div>
+      <span class=hidden>----. Nine</span>
+    </td>
+    <td class=odd colspan=4 id=dadadadadah>
+      <div>0</div>
+      <span class=hidden>----- Zero</span>
+    </td>
+  </tr>
+  <tr id=f>
+    <td class="even empty" colspan=2 id=didididididit>
+      <span class=hidden>......</span>
+    </td>
+    <td class="odd empty" colspan=2 id=didididididah>
+      <span class=hidden>.....-</span>
+    </td>
+    <td class="even empty" colspan=2 id=dididididadit>
+      <span class=hidden>....-.</span>
+    </td>
+    <td class="odd empty" colspan=2 id=dididididadah>
+      <span class=hidden>....--</span>
+    </td>
+    <td class="even empty" colspan=2 id=didididadidit>
+      <span class=hidden>...-..</span>
+    </td>
+    <td class="odd hideable" colspan=2 id=didididadidah>
+      <div class=pro><u>SK</u></div>
+      <span class=hidden>...-.- <u>SK</u> (or <u>VA</u>) <i>End of contact</i>
+        (Mnemonic: “Silent Key”)</span>
+    </td>
+    <td class="even empty" colspan=2 id=didididadadit>
+      <span class=hidden>...--.</span>
+    </td>
+    <td class="odd empty" colspan=2 id=didididadadah>
+      <span class=hidden>...---</span>
+    </td>
+    <td class="even empty" colspan=2 id=dididadididit>
+      <span class=hidden>..-...</span>
+    </td>
+    <td class="odd empty" colspan=2 id=dididadididah>
+      <span class=hidden>..-..-</span>
+    </td>
+    <td class="even empty" colspan=2 id=dididadidadit>
+      <span class=hidden>..-.-.</span>
+    </td>
+    <td class="odd empty" colspan=2 id=dididadidadah>
+      <span class=hidden>..-.--</span>
+    </td>
+    <td class=even colspan=2 id=dididadadidit>
+      <div>?</div>
+      <span class=hidden>..--.. Question mark (note of interrogation or request
+        for repetition of a transmission not understood)</span>
+    </td>
+    <td class=odd colspan=2 id=dididadadidah>
+      <div>_</div>
+      <span class=hidden>..--.- Underscore</span>
+    </td>
+    <td class="even empty" colspan=2 id=dididadadadit>
+      <span class=hidden>..---.</span>
+    </td>
+    <td class="odd empty" colspan=2 id=dididadadadah>
+      <span class=hidden>..----</span>
+    </td>
+    <td class="even empty" colspan=2 id=didadidididit>
+      <span class=hidden>.-....</span>
+    </td>
+    <td class="odd empty" colspan=2 id=didadidididah>
+      <span class=hidden>.-...-</span>
+    </td>
+    <td class=even colspan=2 id=didadididadit>
+      <div>”</div>
+      <span class=hidden>.-..-. Inverted commas (quotation marks) (before and
+        after the words)</span>
+    </td>
+    <td class="odd empty" colspan=2 id=didadididadah>
+      <span class=hidden>.-..--</span>
+    </td>
+    <td class="even empty" colspan=2 id=didadidadidit>
+      <span class=hidden>.-.-..</span>
+    </td>
+    <td class=odd colspan=2 id=didadidadidah>
+      <div>.</div>
+      <span class=hidden>.-.-.- Full stop (period)</span>
+    </td>
+    <td class="even empty" colspan=2 id=didadidadadit>
+      <span class=hidden>.-.--.</span>
+    </td>
+    <td class="odd empty" colspan=2 id=didadidadadah>
+      <span class=hidden>.-.---</span>
+    </td>
+    <td class="even empty" colspan=2 id=didadadididit>
+      <span class=hidden>.--...</span>
+    </td>
+    <td class="odd empty" colspan=2 id=didadadididah>
+      <span class=hidden>.--..-</span>
+    </td>
+    <td class=even colspan=2 id=didadadidadit>
+      <div>@</div>
+      <span class=hidden>.--.-. @, Commercial at (Mnemonic: “<u>AC</u>”, added
+        2004)</span>
+    </td>
+    <td class="odd empty" colspan=2 id=didadadidadah>
+      <span class=hidden>.--.--</span>
+    </td>
+    <td class="even empty" colspan=2 id=didadadadidit>
+      <span class=hidden>.---..</span>
+    </td>
+    <td class="odd empty" colspan=2 id=didadadadidah>
+      <span class=hidden>.---.-</span>
+    </td>
+    <td class=even colspan=2 id=didadadadadit>
+      <div>’</div>
+      <span class=hidden>.----. Apostrophe</span>
+    </td>
+    <td class="odd empty" colspan=2 id=didadadadadah>
+      <span class=hidden>.-----</span>
+    </td>
+    <td class="even empty" colspan=2 id=dadididididit>
+      <span class=hidden>-.....</span>
+    </td>
+    <td class=odd colspan=2 id=dadididididah>
+      <div>-</div>
+      <span class=hidden>-....- Hyphen or dash or subtraction sign</span>
+    </td>
+    <td class="even empty" colspan=2 id=dadidididadit>
+      <span class=hidden>-...-.</span>
+    </td>
+    <td class="odd empty" colspan=2 id=dadidididadah>
+      <span class=hidden>-...--</span>
+    </td>
+    <td class="even empty" colspan=2 id=dadididadidit>
+      <span class=hidden>-..-..</span>
+    </td>
+    <td class="odd empty" colspan=2 id=dadididadidah>
+      <span class=hidden>-..-.-</span>
+    </td>
+    <td class="even empty" colspan=2 id=dadididadadit>
+      <span class=hidden>-..--.</span>
+    </td>
+    <td class="odd hideable" colspan=2 id=dadididadadah>
+      <div class=pro><u>DO</u></div>
+      <span class=hidden>-..--- <u>DO</u> <i>Shift to wabun code</i></span>
+    </td>
+    <td class="even empty" colspan=2 id=dadidadididit>
+      <span class=hidden>-.-...</span>
+    </td>
+    <td class="odd empty" colspan=2 id=dadidadididah>
+      <span class=hidden>-.-..-</span>
+    </td>
+    <td class="even hideable" colspan=2 id=dadidadidadit>
+      <div class="misc FIXME">;</div>
+      <span class=hidden>-.-.-. Semicolon</span>
+    </td>
+    <td class="odd hideable" colspan=2 id=dadidadidadah>
+      <div class=misc>!</div>
+      <span class=hidden>-.-.-- American exclamation mark (<u>KW</u>, suggested
+        by Heathkit)</span>
+    </td>
+    <td class="even empty" colspan=2 id=dadidadadidit>
+      <span class=hidden>-.--..</span>
+    </td>
+    <td class=odd colspan=2 id=dadidadadidah>
+      <div>)</div>
+      <span class=hidden>-.--.- Right-hand bracket (parenthesis)</span>
+    </td>
+    <td class="even empty" colspan=2 id=dadidadadadit>
+      <span class=hidden>-.---.</span>
+    </td>
+    <td class="odd empty" colspan=2 id=dadidadadadah>
+      <span class=hidden>-.----</span>
+    </td>
+    <td class="even empty" colspan=2 id=dadadidididit>
+      <span class=hidden>--....</span>
+    </td>
+    <td class="odd hideable" colspan=2 id=dadadidididah>
+      <div class="es pt">¡</div>
+      <span class=hidden>--...- Inverted exclamation mark (Portuguese,
+        Spanish)</span>
+    </td>
+    <td class="even hideable" colspan=2 id=dadadididadit>
+      <div class=pl>ź</div>
+      <span class=hidden>--..-. Ź (Polish)</span>
+    </td>
+    <td class=odd colspan=2 id=dadadididadah>
+      <div>,</div>
+      <span class=hidden>--..-- Comma</span>
+    </td>
+    <td class="even empty" colspan=2 id=dadadidadidit>
+      <span class=hidden>--.-..</span>
+    </td>
+    <td class="odd empty" colspan=2 id=dadadidadidah>
+      <span class=hidden>--.-.-</span>
+    </td>
+    <td class="even empty" colspan=2 id=dadadidadadit>
+      <span class=hidden>--.--.</span>
+    </td>
+    <td class="odd empty" colspan=2 id=dadadidadadah>
+      <span class=hidden>--.---</span>
+    </td>
+    <td class=even colspan=2 id=dadadadididit>
+      <div>:</div>
+      <span class=hidden>---... Colon or division sign</span>
+    </td>
+    <td class="odd empty" colspan=2 id=dadadadididah>
+      <span class=hidden>---..-</span>
+    </td>
+    <td class="even empty" colspan=2 id=dadadadidadit>
+      <span class=hidden>---.-.</span>
+    </td>
+    <td class="odd empty" colspan=2 id=dadadadidadah>
+      <span class=hidden>---.--</span>
+    </td>
+    <td class="even empty" colspan=2 id=dadadadadidit>
+      <span class=hidden>----..</span>
+    </td>
+    <td class="odd empty" colspan=2 id=dadadadadidah>
+      <span class=hidden>----.-</span>
+    </td>
+    <td class="even empty" colspan=2 id=dadadadadadit>
+      <span class=hidden>-----.</span>
+    </td>
+    <td class="odd empty" colspan=2 id=dadadadadadah>
+      <span class=hidden>------</span>
+    </td>
+  </tr>
+  <tr id=g>
+    <td class="even empty" id=dididididididit>
+      <span class=hidden>.......</span>
+    </td>
+    <td class="odd empty" id=dididididididah>
+      <span class=hidden>......-</span>
+    </td>
+    <td class="even empty" id=didididididadit>
+      <span class=hidden>.....-.</span>
+    </td>
+    <td class="odd empty" id=didididididadah>
+      <span class=hidden>.....--</span>
+    </td>
+    <td class="even empty" id=dididididadidit>
+      <span class=hidden>....-..</span>
+    </td>
+    <td class="odd empty" id=dididididadidah>
+      <span class=hidden>....-.-</span>
+    </td>
+    <td class="even empty" id=dididididadadit>
+      <span class=hidden>....--.</span>
+    </td>
+    <td class="odd empty" id=dididididadadah>
+      <span class=hidden>....---</span>
+    </td>
+    <td class="even hideable" id=didididadididit>
+      <div class=pl>ś</div>
+      <span class=hidden>...-... Ś (Polish)</span>
+    </td>
+    <td class="odd hideable" id=didididadididah>
+      <div class="misc FIXME">$</div>
+      <span class=hidden>...-..- Dollar sign (Mnemonic: “<u>SX</u>”, crossed
+        out S)</span>
+    </td>
+    <td class="even empty" id=didididadidadit>
+      <span class=hidden>...-.-.</span>
+    </td>
+    <td class="odd empty" id=didididadidadah>
+      <span class=hidden>...-.--</span>
+    </td>
+    <td class="even hideable" id=didididadadidit>
+      <div class="de sv">ß</div>
+      <span class=hidden>...--.. ß (German, Swedish)</span>
+    </td>
+    <td class="odd empty" id=didididadadidah>
+      <span class=hidden>...--.-</span>
+    </td>
+    <td class="even empty" id=didididadadadit>
+      <span class=hidden>...---.</span>
+    </td>
+    <td class="odd empty" id=didididadadadah>
+      <span class=hidden>...----</span>
+    </td>
+    <td class="even empty" id=dididadidididit>
+      <span class=hidden>..-....</span>
+    </td>
+    <td class="odd empty" id=dididadidididah>
+      <span class=hidden>..-...-</span>
+    </td>
+    <td class="even empty" id=dididadididadit>
+      <span class=hidden>..-..-.</span>
+    </td>
+    <td class="odd empty" id=dididadididadah>
+      <span class=hidden>..-..--</span>
+    </td>
+    <td class="even empty" id=dididadidadidit>
+      <span class=hidden>..-.-..</span>
+    </td>
+    <td class="odd empty" id=dididadidadidah>
+      <span class=hidden>..-.-.-</span>
+    </td>
+    <td class="even empty" id=dididadidadadit>
+      <span class=hidden>..-.--.</span>
+    </td>
+    <td class="odd empty" id=dididadidadadah>
+      <span class=hidden>..-.---</span>
+    </td>
+    <td class="even empty" id=dididadadididit>
+      <span class=hidden>..--...</span>
+    </td>
+    <td class="odd empty" id=dididadadididah>
+      <span class=hidden>..--..-</span>
+    </td>
+    <td class="even empty" id=dididadadidadit>
+      <span class=hidden>..--.-.</span>
+    </td>
+    <td class="odd empty" id=dididadadidadah>
+      <span class=hidden>..--.--</span>
+    </td>
+    <td class="even empty" id=dididadadadidit>
+      <span class=hidden>..---..</span>
+    </td>
+    <td class="odd empty" id=dididadadadidah>
+      <span class=hidden>..---.-</span>
+    </td>
+    <td class="even empty" id=dididadadadadit>
+      <span class=hidden>..----.</span>
+    </td>
+    <td class="odd empty" id=dididadadadadah>
+      <span class=hidden>..-----</span>
+    </td>
+    <td class="even empty" id=didadididididit>
+      <span class=hidden>.-.....</span>
+    </td>
+    <td class="odd empty" id=didadididididah>
+      <span class=hidden>.-....-</span>
+    </td>
+    <td class="even empty" id=didadidididadit>
+      <span class=hidden>.-...-.</span>
+    </td>
+    <td class="odd empty" id=didadidididadah>
+      <span class=hidden>.-...--</span>
+    </td>
+    <td class="even empty" id=didadididadidit>
+      <span class=hidden>.-..-..</span>
+    </td>
+    <td class="odd empty" id=didadididadidah>
+      <span class=hidden>.-..-.-</span>
+    </td>
+    <td class="even empty" id=didadididadadit>
+      <span class=hidden>.-..--.</span>
+    </td>
+    <td class="odd empty" id=didadididadadah>
+      <span class=hidden>.-..---</span>
+    </td>
+    <td class="even empty" id=didadidadididit>
+      <span class=hidden>.-.-...</span>
+    </td>
+    <td class="odd empty" id=didadidadididah>
+      <span class=hidden>.-.-..-</span>
+    </td>
+    <td class="even empty" id=didadidadidadit>
+      <span class=hidden>.-.-.-.</span>
+    </td>
+    <td class="odd empty" id=didadidadidadah>
+      <span class=hidden>.-.-.--</span>
+    </td>
+    <td class="even empty" id=didadidadadidit>
+      <span class=hidden>.-.--..</span>
+    </td>
+    <td class="odd empty" id=didadidadadidah>
+      <span class=hidden>.-.--.-</span>
+    </td>
+    <td class="even empty" id=didadidadadadit>
+      <span class=hidden>.-.---.</span>
+    </td>
+    <td class="odd empty" id=didadidadadadah>
+      <span class=hidden>.-.----</span>
+    </td>
+    <td class="even empty" id=didadadidididit>
+      <span class=hidden>.--....</span>
+    </td>
+    <td class="odd empty" id=didadadidididah>
+      <span class=hidden>.--...-</span>
+    </td>
+    <td class="even empty" id=didadadididadit>
+      <span class=hidden>.--..-.</span>
+    </td>
+    <td class="odd empty" id=didadadididadah>
+      <span class=hidden>.--..--</span>
+    </td>
+    <td class="even empty" id=didadadidadidit>
+      <span class=hidden>.--.-..</span>
+    </td>
+    <td class="odd empty" id=didadadidadidah>
+      <span class=hidden>.--.-.-</span>
+    </td>
+    <td class="even empty" id=didadadidadadit>
+      <span class=hidden>.--.--.</span>
+    </td>
+    <td class="odd empty" id=didadadidadadah>
+      <span class=hidden>.--.---</span>
+    </td>
+    <td class="even empty" id=didadadadididit>
+      <span class=hidden>.---...</span>
+    </td>
+    <td class="odd empty" id=didadadadididah>
+      <span class=hidden>.---..-</span>
+    </td>
+    <td class="even empty" id=didadadadidadit>
+      <span class=hidden>.---.-.</span>
+    </td>
+    <td class="odd empty" id=didadadadidadah>
+      <span class=hidden>.---.--</span>
+    </td>
+    <td class="even empty" id=didadadadadidit>
+      <span class=hidden>.----..</span>
+    </td>
+    <td class="odd empty" id=didadadadadidah>
+      <span class=hidden>.----.-</span>
+    </td>
+    <td class="even empty" id=didadadadadadit>
+      <span class=hidden>.-----.</span>
+    </td>
+    <td class="odd empty" id=didadadadadadah>
+      <span class=hidden>.------</span>
+    </td>
+    <td class="even empty" id=dadidididididit>
+      <span class=hidden>-......</span>
+    </td>
+    <td class="odd empty" id=dadidididididah>
+      <span class=hidden>-.....-</span>
+    </td>
+    <td class="even empty" id=dadididididadit>
+      <span class=hidden>-....-.</span>
+    </td>
+    <td class="odd empty" id=dadididididadah>
+      <span class=hidden>-....--</span>
+    </td>
+    <td class="even empty" id=dadidididadidit>
+      <span class=hidden>-...-..</span>
+    </td>
+    <td class="odd hideable" id=dadidididadidah>
+      <div class=pro><u>BK</u></div>
+      <span class=hidden>-...-.- <u>BK</u> <i>Break</i> (Mnemonic:
+        “BacK-to-you”)</span>
+    </td>
+    <td class="even empty" id=dadidididadadit>
+      <span class=hidden>-...--.</span>
+    </td>
+    <td class="odd empty" id=dadidididadadah>
+      <span class=hidden>-...---</span>
+    </td>
+    <td class="even empty" id=dadididadididit>
+      <span class=hidden>-..-...</span>
+    </td>
+    <td class="odd empty" id=dadididadididah>
+      <span class=hidden>-..-..-</span>
+    </td>
+    <td class="even empty" id=dadididadidadit>
+      <span class=hidden>-..-.-.</span>
+    </td>
+    <td class="odd empty" id=dadididadidadah>
+      <span class=hidden>-..-.--</span>
+    </td>
+    <td class="even empty" id=dadididadadidit>
+      <span class=hidden>-..--..</span>
+    </td>
+    <td class="odd empty" id=dadididadadidah>
+      <span class=hidden>-..--.-</span>
+    </td>
+    <td class="even empty" id=dadididadadadit>
+      <span class=hidden>-..---.</span>
+    </td>
+    <td class="odd empty" id=dadididadadadah>
+      <span class=hidden>-..----</span>
+    </td>
+    <td class="even empty" id=dadidadidididit>
+      <span class=hidden>-.-....</span>
+    </td>
+    <td class="odd empty" id=dadidadidididah>
+      <span class=hidden>-.-...-</span>
+    </td>
+    <td class="even empty" id=dadidadididadit>
+      <span class=hidden>-.-..-.</span>
+    </td>
+    <td class="odd empty" id=dadidadididadah>
+      <span class=hidden>-.-..--</span>
+    </td>
+    <td class="even empty" id=dadidadidadidit>
+      <span class=hidden>-.-.-..</span>
+    </td>
+    <td class="odd empty" id=dadidadidadidah>
+      <span class=hidden>-.-.-.-</span>
+    </td>
+    <td class="even empty" id=dadidadidadadit>
+      <span class=hidden>-.-.--.</span>
+    </td>
+    <td class="odd empty" id=dadidadidadadah>
+      <span class=hidden>-.-.---</span>
+    </td>
+    <td class="even empty" id=dadidadadididit>
+      <span class=hidden>-.--...</span>
+    </td>
+    <td class="odd empty" id=dadidadadididah>
+      <span class=hidden>-.--..-</span>
+    </td>
+    <td class="even empty" id=dadidadadidadit>
+      <span class=hidden>-.--.-.</span>
+    </td>
+    <td class="odd empty" id=dadidadadidadah>
+      <span class=hidden>-.--.--</span>
+    </td>
+    <td class="even empty" id=dadidadadadidit>
+      <span class=hidden>-.---..</span>
+    </td>
+    <td class="odd empty" id=dadidadadadidah>
+      <span class=hidden>-.---.-</span>
+    </td>
+    <td class="even empty" id=dadidadadadadit>
+      <span class=hidden>-.----.</span>
+    </td>
+    <td class="odd empty" id=dadidadadadadah>
+      <span class=hidden>-.-----</span>
+    </td>
+    <td class="even empty" id=dadadididididit>
+      <span class=hidden>--.....</span>
+    </td>
+    <td class="odd empty" id=dadadididididah>
+      <span class=hidden>--....-</span>
+    </td>
+    <td class="even empty" id=dadadidididadit>
+      <span class=hidden>--...-.</span>
+    </td>
+    <td class="odd empty" id=dadadidididadah>
+      <span class=hidden>--...--</span>
+    </td>
+    <td class="even empty" id=dadadididadidit>
+      <span class=hidden>--..-..</span>
+    </td>
+    <td class="odd empty" id=dadadididadidah>
+      <span class=hidden>--..-.-</span>
+    </td>
+    <td class="even empty" id=dadadididadadit>
+      <span class=hidden>--..--.</span>
+    </td>
+    <td class="odd empty" id=dadadididadadah>
+      <span class=hidden>--..---</span>
+    </td>
+    <td class="even empty" id=dadadidadididit>
+      <span class=hidden>--.-...</span>
+    </td>
+    <td class="odd empty" id=dadadidadididah>
+      <span class=hidden>--.-..-</span>
+    </td>
+    <td class="even empty" id=dadadidadidadit>
+      <span class=hidden>--.-.-.</span>
+    </td>
+    <td class="odd empty" id=dadadidadidadah>
+      <span class=hidden>--.-.--</span>
+    </td>
+    <td class="even empty" id=dadadidadadidit>
+      <span class=hidden>--.--..</span>
+    </td>
+    <td class="odd empty" id=dadadidadadidah>
+      <span class=hidden>--.--.-</span>
+    </td>
+    <td class="even empty" id=dadadidadadadit>
+      <span class=hidden>--.---.</span>
+    </td>
+    <td class="odd empty" id=dadadidadadadah>
+      <span class=hidden>--.----</span>
+    </td>
+    <td class="even empty" id=dadadadidididit>
+      <span class=hidden>---....</span>
+    </td>
+    <td class="odd empty" id=dadadadidididah>
+      <span class=hidden>---...-</span>
+    </td>
+    <td class="even empty" id=dadadadididadit>
+      <span class=hidden>---..-.</span>
+    </td>
+    <td class="odd empty" id=dadadadididadah>
+      <span class=hidden>---..--</span>
+    </td>
+    <td class="even empty" id=dadadadidadidit>
+      <span class=hidden>---.-..</span>
+    </td>
+    <td class="odd empty" id=dadadadidadidah>
+      <span class=hidden>---.-.-</span>
+    </td>
+    <td class="even empty" id=dadadadidadadit>
+      <span class=hidden>---.--.</span>
+    </td>
+    <td class="odd empty" id=dadadadidadadah>
+      <span class=hidden>---.---</span>
+    </td>
+    <td class="even empty" id=dadadadadididit>
+      <span class=hidden>----...</span>
+    </td>
+    <td class="odd empty" id=dadadadadididah>
+      <span class=hidden>----..-</span>
+    </td>
+    <td class="even empty" id=dadadadadidadit>
+      <span class=hidden>----.-.</span>
+    </td>
+    <td class="odd empty" id=dadadadadidadah>
+      <span class=hidden>----.--</span>
+    </td>
+    <td class="even empty" id=dadadadadadidit>
+      <span class=hidden>-----..</span>
+    </td>
+    <td class="odd empty" id=dadadadadadidah>
+      <span class=hidden>-----.-</span>
+    </td>
+    <td class="even empty" id=dadadadadadadit>
+      <span class=hidden>------.</span>
+    </td>
+    <td class="odd empty" id=dadadadadadadah>
+      <span class=hidden>-------</span>
+    </td>
+  </tr>
+</table>
+
+  <p>Characters in black is standard Morse code, shaded/italic characters
+    belong to various national character sets. Additional information is
+    available in some cases by hovering above the relevant symbol in the table.
+
+  <p>Click on any of the above table cells to hear the morse code signal for
+    that cell (regardless of whether it is empty or not).
+
+  <p class=copyright>Skrivet av <a href="zrajm@klingonska.org">Zrajm C
+      Akfohg</a>, <time>2011-09-26</time> to <time>2013-06-16</time>.
+
+  <script src="jquery-1.10.1.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
