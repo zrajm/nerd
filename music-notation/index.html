@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Music Notation</title>
+  <link rel="stylesheet" href="base.css">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="canonical" href="http://zrajm.org/nerd/music-notation/">
+</head>
+<body lang="en" itemscope itemtype="http://schema.org/WebPage">
+
+<header role="banner">
+  <h1>Some Advice on Writing Sheet Music</h1>
+  <h2>By <i>zrajm</i></h2>
+</header>
+
+<div role="main" itemprop="mainContentOfPage">
+
+  <p>I am by no means a professional when it comes to typesetting music, but I
+    have dabbled a bit with it
+    using <a href="http://lilypond.org/">Lilypond</a> (sometimes
+    writing <a href="http://klingonska.org/songs/anthem/">a Klingon song</a>
+    or <a href="http://klingonska.org/songs/tahjaj_wo/">two</a>, sometimes
+    doing <a href="http://zrajm.org/songs/">choir music</a>).
+
+<p>I’ve found that remembering all the conventions of music typesetting
+  is <i>hard,</i> so here I’ve tried to collect some of the wisdoms I’ve
+  encountered. – This stuff should be general enough to be used with any kind
+  of score producing software.
+
+  <p>Some good advice for typesetting music:
+
+    <ul>
+      <li><a href="http://www3.cpdl.org/wiki/index.php/Help:Score_layout_tips">CPDL –
+          Help: The perfect edition</a>
+
+      <li><a href="http://jonathanfeist.berkleemusicblogs.com/2009/05/10/ten-tips-towards-clearer-notation/">Ten
+          Tips towards Clearer Notation</a>
+
+      <li><a href="http://icking-music-archive.org/lists/sottisier/sottieng.pdf">Repository
+            of music-notation mistakes</a>
+    </ul>
+<dl>
+
+  <dt><a href="http://en.wikipedia.org/wiki/Beam_(music)">beam</a>
+  <dd>Beams are thick lines that are used connect consecutive notes (well,
+    eighths and shorter notes). They are used instead of the
+    note <em>flag.</em>
+
+    <p>Notes for singing traditionally only use beams when a single syllable is
+    held over more than one note (and even then the beam is broken at the main
+    beats in the bar). But newer practices advocate using beams in vocal music
+    in the same manner as other music.
+    (See: <a href="http://forums.cpdl.org/phpBB3/viewtopic.php?t=5375">Beaming
+    of notes in Choral Music</a>)
+
+  <dt><a href="http://en.wikipedia.org/wiki/Crotchet">crotchet</a>
+  <dd>Also called <em>quarter</em> or <em>quarter note.</em>
+
+  <dt><a href="http://en.wikipedia.org/wiki/Flag_(note)">flag</a>
+  <dd><img style="float:right;" src="parts-of-note.png"> A little wavey thing
+    at the end of the note <em>stem</em>, indicating that a note is
+    an <em>eighth</em> or shorter. A flag may be replaced by a <em>beam</em>
+    which connect the note to a neigboring note.
+
+  <dt><a href="http://en.wikipedia.org/wiki/Staff_(music)#Grand_staff">grand staff</a>
+  <dd><img style="float:right;" src="grand-staff.png" height=164 width=220>Two
+    (or more) staves joined by a brace, or intended to be played at once by a
+    single performer (usually a keyboard instrument or the harp), make up
+    a <i>great stave</i> (BrE) or <i>grand staff</i> (AmE). The upper staff
+    usually have a treble clef and the lower staff has a bass clef (in this
+    instance, middle C is centered between the two staves, and it can be
+    written on the first ledger line below the upper staff or the first ledger
+    line above the lower staff). When playing the piano or harp, the upper
+    staff is normally played with the right hand and the lower staff with the
+    left hand. When written for the organ, a grand staff comprises three
+    staves, one for each hand on the manuals and one for the feet on the
+    pedalboard.
+
+  <dt><a href="http://en.wikipedia.org/wiki/Lyrics">lyrics</a> (låttext)
+  <dd>(This is my guess, based on looking at lyrics in other peoples notes
+    rather than something I’ve found concrete advice on.) Lyrics should be
+    written with a full set of punctuation marks when written in musical scores
+    (e.g. using a period at the end of each sentence). – Sometimes (in poetry
+    and lyrics written without any musical score) periods and commas are left
+    off (or implied by the line breaks), but since line breaks are wholly
+    determined by the music these clues are not available in sheet music.
+
+  <dt><a href="http://en.wikipedia.org/wiki/Minim_(music)">minim</a>
+  <dd>Also called <em>half note.</em>
+
+  <dt><a href="http://en.wikipedia.org/wiki/Quaver">quaver</a>
+  <dd>Also called <em>eighth</em> or <em>eighth note.</em>
+
+  <dt><a href="http://en.wikipedia.org/wiki/Rest_(music)">rest</a>
+  <dd>A brief pause in the music.
+
+  <dt><a href="http://en.wikipedia.org/wiki/Semiquaver">semiquaver</a>
+  <dd>Also called <em>sixteenth</em> or <em>sixteenth note</em>. This note
+    has two <em>flags</em> or <em>beams.</em>
+
+  <dt><a href="http://en.wikipedia.org/wiki/Staff_(music)">staff</a>
+  <dd>Five horizontal <i>lines</i> and four <i>spaces</i> that each represent a
+    different musical pitch or different percussion instruments. Lines and
+    spaces are numbered from bottom to top; bottom line is the <i>first
+    line</i> and the top line is the <i>fifth line.</i>
+
+  <dt><a href="http://en.wikipedia.org/wiki/Stem_(music)">stem</a>
+  <dd>A vertical line connected to the <em>note head</em> of half notes, and
+    all notes of shorter duration.
+
+  <dt><a href="http://en.wikipedia.org/wiki/Upbeat#Upbeat">upbeat</a>
+  <dd>Also called <em>anacrusis.</em> A partial unaccented measure that occurs
+    before the first whole measure of a piece. Traditionally, if there is an
+    upbeat, then the last measure of the same piece is shorter (so that the
+    entire piece contains a whole number of measures).
+
+    <p>When more than one voice is used, only some of which have upbeats, then
+    upbeats are written for all the voices (and filled with <em>rests</em> for
+    those voices where the upbeat is not played).
+
+</dl>
+</div>
+
+<footer role="contentinfo">
+  <p class="copyright">&copy;<time itemprop="copyrightYear">2013</time> by
+    <a href="mailto:zrajm@klingonska.org" rel="author" itemprop="author">zrajm</a>,
+    <a href="http://klingonska.org/" itemprop="sourceOrganization">Klingonska Akademien</a>, Uppsala
+  </p>
+  <p>
+    License:
+    <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC BY&ndash;SA</a>.&nbsp;
+  </p>
+</footer>
+</body>
+</html>
