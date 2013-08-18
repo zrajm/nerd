@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Barcode Scanner Settings for Uppsala English Bookshop</title>
+    <style><!--
+        .module  { color: #008; }
+        .func    { color: #808; }
+        .syntax  { color: #0aa; font-weight: bold; }
+        .var     { color: #662; }
+        .comment { color: #a22; }
+        .string  { color: #080; }
+        figure {
+            text-align: center;
+            margin: 1.5em;
+        }
+        pre {
+            margin: 1em 3em;
+        }
+        footer {
+            margin: 1.5em auto;
+            border-top: 1px solid black;
+        }
+        h1 {
+            text-align: left;
+            word-spacing: .125em;
+            line-height: 135%;
+            text-indent: -1em;
+            margin: .5em 1em 1em;
+        }
+        body {
+            margin: 1.5em auto;
+            font-family: Georgia, "Times New Roman", Times, serif;
+            max-width: 34.5em;
+            text-align: justify;
+        }
+    --></style>
+  </head>
+  <body>
+
+    <h1>Barcode Scanner Settings for Uppsala English Bookshop</h1>
+
+    <p><time datetime="2012-04-25">April 25, 2012</time>: <i>Uppsala English
+      Bookshop</i> (my favorite bookstore, and former employer) got themselves
+      a new barcode scanner.&mdash;This last happened when I was in their
+      employ, and since I hacked <em>that</em> one to behave nicely, they now
+      asked me to do it again. Nothing much needed, after each scan it should
+      just enter <i>tab-tab-tab</i> to move to the next input field in the cash
+      register system.</p>
+
+    <p>While the old scanner had a nice and easy setup for programming, this
+      new one was sorta devilish. The manual says you should print the barcodes
+      required set the options you need. (It also goes on to give terse cryptic
+      descriptions of the options available, and much lengthier descriptions of
+      various&mdash;<em>perfectly googlable</em>&mdash;barcode standards).</p>
+
+    <p>In the end, this is what my favorite bookstore needed:</p>
+
+    <figure>
+      <img src="string_termination_3_x_tab.png" />
+      <figcaption>
+        String #1 &ndash; Termination Character &ndash; Three Tabs
+        <br />FNC3 + <tt>0202011000$09$09$09</tt>
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="string_termination_disabled.png" />
+      <figcaption>String #1 &ndash; Disable Termination Character</figcaption>
+    </figure>
+
+    <p>In the end I managed to decipher the options tables, and barcode
+      composition descriptions of the manual and produce the above
+      custom <a href="http://en.wikipedia.org/wiki/Code_128">Code 128</a>
+      barcode.&mdash;Harder than it sounds, since the program barcode has to
+      include an <tt>FNC 3</tt> control code, which most barcode generators
+      promptly refuse to generate (or make it impossible to insert). However, I
+      found the Perl module <tt>Barcode::Code128</tt> which&mdash;after some
+      coercion&mdash;did the job intended.</p>
+
+    <p>To install the required stuff under Ubuntu/Debian use the command
+      &ldquo;<code>aptitude install libgd-barcode-perl
+      libbarcode-code128-perl</code>&rdquo;, then copy/paste the following
+      little program which writes the above &lsquo;Three Tabs&rsquo; barcode on
+      standard out.</p>
+
+<pre>
+<span class="comment">#!/usr/bin/perl</span>
+<span class="syntax">use</span> <span class="module">Barcode::Code128</span> qw<span class="string">(:all)</span>;
+<span class="syntax">my</span> <span class="var">$barcode</span> = new Barcode::Code128;
+<span class="var">$barcode</span>->border(0);
+<span class="var">$barcode</span>->transparent_text(1);
+<span class="var">$barcode</span>->show_text(0);
+<span class="var">$barcode</span>->height(70);
+
+<span class="comment"># In the string passed to encode() below, space means "00",
+# exclamation mark means "01", double quote means "02", and
+# asterisk means "10". See also the character table on the
+# Wikipedia article on "Code 128".
+
+# string #1 - termination char - 3 x tab</span>
+<span class="var">$barcode</span>->encode(
+    FNC3 . CodeC . <span class="string">'""!* '</span> . FNC4 . <span class="string">'$09$09$09'</span>,
+    <span class="string">'B'</span>
+);
+<span class="func">print</span> <span class="var">$barcode</span>->png();
+</pre>
+
+    <p>Easy, peasy&mdash;<em>right?</em></p>
+
+    <footer>Written by <a href="mailto:zrajm@klingonska.org">zrajm</a> on <time pubdate datetime="2012-04-26">April 26, 2012</time></footer>
+
+  </body>
+</html>
