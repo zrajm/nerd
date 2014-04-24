@@ -1,0 +1,494 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  body {
+      background: #000;
+      color: #e6e6e6;
+      font: 1em/1.4em sans;
+  }
+  figure {
+      margin: 2.5em 0;
+  }
+  figcaption ul {
+      margin: 0;
+  }
+  td, th {
+      vertical-align: top;
+      text-shadow: 0 0 1px #fff;
+      padding: .25em .5em;
+  }
+  td.plain +  td.bold,
+  td:first-child {
+      padding-left: 1em;
+  }
+  td.plain +  td.plain +  td.plain +  td.plain,
+  td:last-child {
+      padding-right: 1em;
+  }
+  .inverse-color {
+      backgound: #e6e6e6;
+      color: #000;
+  }
+  table.normal-color td,
+  table.normal-color th,
+  .normal-color table td,
+  .normal-color table th {
+      border: 2px solid #fff;
+  }
+  .normal-color {
+      backgound: #000;
+      color: #e6e6e6;
+  }
+
+  table {
+      border: 2px solid #fff;
+      margin: 1em auto;
+      border-collapse: collapse;
+  }
+  td.bad {
+      background: #551111;
+      color: #c76366;
+  }
+  tr.cursor  .text  { background: #000000; }
+  tr.cursor  .color { background: #ff8800; }
+  tr.black   .plain, tr.background .plain { background: #000000; }
+  tr.black   .bold,  tr.background .bold  { background: #1a1a1a; }
+  tr.red     .plain { background: #c76366; }
+  tr.red     .bold  { background: #e07073; }
+  tr.green   .plain { background: #71994c; }
+  tr.green   .bold  { background: #84b259; }
+  tr.yellow  .plain { background: #c7c063; }
+  tr.yellow  .bold  { background: #e0d970; }
+  tr.blue    .plain { background: #6a6ad4; }
+  tr.blue    .bold  { background: #7777ed; }
+  tr.magenta .plain { background: #bf609c; }
+  tr.magenta .bold  { background: #db6eb3; }
+  tr.cyan    .plain { background: #4b948b; }
+  tr.cyan    .bold  { background: #59b0a5; }
+  tr.white   .plain, tr.foreground .plain { background: #e6e6e6; }
+  tr.white   .bold,  tr.foreground .bold  { background: #ffffff; }
+
+  a { color: #7777ed; }
+
+  col, tr {
+      border: 2px solid black;
+  }
+
+  dt { font-weight: bold; }
+
+  section h1 {
+      font-size: 175%;
+  }
+
+  section section h1 {
+      font-size: 150%;
+  }
+
+  small {
+      font-size: 75%;
+      color: #4B948B;
+  }
+  .bad small {
+      color: #e07073;
+  }
+  dt {
+      margin-top: .75em;
+  }
+</style>
+</head>
+<body>
+
+  <h1>Terminal Settings</h1>
+
+  <p>This is how I (zrajm) like my terminals. &ndash; It might be interesting
+    for you &ldquo;normals&rdquo; to know that I have a red-green color vision
+    deficiency (which is present in about 8 percent of males and 0.5 percent of
+    females of Northern European ancestry) though I cannot say whether this
+    will make my colors unsuitable for normals.</p>
+
+<section>
+<h1 id="colors">Colors</h1>
+<div id="colors-content">
+
+<dl>
+  <dt>Low Saturation</dt>
+  <dd>I find highly saturated colors on a black background hard to read,
+    especially plain red and plain blue. My solution is to make the colors
+    brighter, and lower the saturation significantly.</dd>
+
+  <dt>Consistent Brightness</dt>
+  <dd>All the colors with in each of the two categories (plain and bold) should
+    have the same apparent brightness (in most terminals yellow, magenta and cyan
+    are markedly brighter).</dd>
+
+  <dt>High Contrast</dt>
+  <dd>All the colors should be easy to tell apart, even when occurring alone.
+    Especially one should be able to <em>see</em> which color a text has, even
+    if it appears on an otherwise black screen &ndash; for example, cyan should
+    not have to sit just next to some white text in order to be identifiable as
+    being cyan.</dd>
+
+
+  <dd>E.g. if a piece of text is
+    written in cyan (even if it&rsquo;s written in isolation), I want to be able
+    to <em>see</em> that it&rsquo;s written in cyan, and not mistake it for white. So
+    the contrasts between the different colors have to be good enough. &ndash;
+    But there is also needs to be good enough contrast between the plain and
+    bold versions: I&rsquo;ve especially found that bold black text on a colored
+    background (e.g. Irssi&rsquo;s status line) is hard to read in many default
+    configurations (e.g. in PuTTY and gnome-terminal).</dd>
+</dl>
+
+<table class="inverse-color">
+  <colgroup>
+    <col span="4">
+    <col span="4">
+  </colgroup>
+  <tr class="normal-color">
+    <th class="plain">PuTTY Color
+    <th class="plain">Decimal
+    <th class="plain">XResource
+    <th class="plain">Hex
+    <th class="bold">PuTTY Color
+    <th class="bold">Decimal
+    <th class="bold">XResource
+    <th class="bold">Hex
+  </tr>
+  <tr class="foreground">
+    <td class="plain">Default Foreground
+    <td class="plain">230, 230, 230
+    <td class="plain">foreground
+    <td class="plain">#E6E6E6
+    <td class="bold">Default Bold Foreground
+    <td class="bold">255, 255, 255
+    <td class="bold">&ndash;
+    <td class="bold">#FFFFFF
+  </tr>
+  <tr class="background">
+    <td class="plain">Default Background
+    <td class="plain">0, 0, 0
+    <td class="plain">background
+    <td class="plain">#000000
+    <td class="bold">Default Bold Background
+    <td class="bold">26, 26, 26
+    <td class="bold">&ndash;
+    <td class="bold">#1A1A1A
+  </tr>
+  <tr class="cursor">
+    <td class="text">Cursor Text
+    <td class="text">0, 0, 0
+    <td class="text">&ndash;
+    <td class="text">#000000
+    <td class="color">Cursor Colour
+    <td class="color">255, 127, 0
+    <td class="color">&ndash;
+    <td class="color">#FF8800
+  </tr>
+  <tr class="black">
+    <td class="plain">ANSI Black
+    <td class="plain">0, 0, 0
+    <td class="plain">color0
+    <td class="plain">#000000
+    <td class="bold">ANSI Black Bold
+    <td class="bold">26, 26, 26
+    <td class="bold">color8
+    <td class="bold">#1A1A1A
+  </tr>
+  <tr class="red">
+    <td class="plain">ANSI Red
+    <td class="plain">199, 99, 102
+    <td class="plain">color1
+    <td class="plain">#C76366
+    <td class="bold">ANSI Red Bold
+    <td class="bold">224, 112, 115
+    <td class="bold">color9
+    <td class="bold">#E07073
+  </tr>
+  <tr class="green">
+    <td class="plain">ANSI Green
+    <td class="plain">113, 153, 56
+    <td class="plain">color2
+    <td class="plain">#71994C
+    <td class="bold">ANSI Green Bold
+    <td class="bold">132, 178, 89
+    <td class="bold">color10
+    <td class="bold">#84B259
+  </tr>
+  <tr class="yellow">
+    <td class="plain">ANSI Yellow
+    <td class="plain">199, 192, 99
+    <td class="plain">color3
+    <td class="plain">#C7C063
+    <td class="bold">ANSI Yellow Bold
+    <td class="bold">224, 217, 112
+    <td class="bold">color11
+    <td class="bold">#E0D970
+  </tr>
+  <tr class="blue">
+    <td class="plain">ANSI Blue
+    <td class="plain">106, 106, 212
+    <td class="plain">color4
+    <td class="plain">#6A6AD4
+    <td class="bold">ANSI Blue Bold
+    <td class="bold">119, 119, 237
+    <td class="bold">color12
+    <td class="bold">#7777ED
+  </tr>
+  <tr class="magenta">
+    <td class="plain">ANSI Magenta
+    <td class="plain">191, 96, 156
+    <td class="plain">color5
+    <td class="plain">#BF609C
+    <td class="bold">ANSI Magenta Bold
+    <td class="bold">219, 110, 179
+    <td class="bold">color13
+    <td class="bold">#DB6EB3
+  </tr>
+  <tr class="cyan">
+    <td class="plain">ANSI Cyan
+    <td class="plain">75, 148, 139
+    <td class="plain">color6
+    <td class="plain">#4B948B
+    <td class="bold">ANSI Cyan Bold
+    <td class="bold">89, 176, 165
+    <td class="bold">color14
+    <td class="bold">#59B0A5
+  </tr>
+  <tr class="white">
+    <td class="plain">ANSI White
+    <td class="plain">230, 230, 230
+    <td class="plain">color7
+    <td class="plain">#E6E6E6
+    <td class="bold">ANSI White Bold
+    <td class="bold">255, 255, 255
+    <td class="bold">color15
+    <td class="bold">#FFFFFF
+  </tr>
+</table>
+
+
+<section>
+<h1 id="colors-urxvt">URxvt</h1>
+<div id="colors-urxvt-content">
+
+  <p>This are my <code>.Xresources</code> for URxvt.</p>
+
+<blockquote><pre>
+! foreground/background
+URxvt.foreground: #E6E6E6
+URxvt.background: #000000
+! black
+URxvt.color0:     #000000
+URxvt.color8:     #1A1A1A
+! red
+URxvt.color1:     #C76366
+URxvt.color9:     #E07073
+! green
+URxvt.color2:     #71994C
+URxvt.color10:    #84B259
+! yellow
+URxvt.color3:     #C7C063
+URxvt.color11:    #E0D970
+! blue
+URxvt.color4:     #6A6AD4
+URxvt.color12:    #7777ED
+! magenta
+URxvt.color5:     #BF609C
+URxvt.color13:    #DB6EB3
+! cyan
+URxvt.color6:     #4B948B
+URxvt.color14:    #59B0A5
+! white
+URxvt.color7:     #E6E6E6
+URxvt.color15:    #FFFFFF
+</pre></blockquote>
+
+</div></section>
+
+<section>
+<h1 id="colors-putty">PuTTY</h1>
+<div id="colors-putty-content">
+
+<p>All the below settings are collected <a href="putty.reg">in this Windows
+registry file</a>. So if you&rsquo;re lazy and don&rsquo;t want to configure
+all that stuff by hand, download the file to your desktop, then right click and
+select &lsquo;Insert into register&rsquo;. (This will only affect the
+&lsquo;Default Settings&rsquo; of PuTTY so it is best to do this before adding
+own profiles, so that new profiles come to be based on these.)</p>
+
+<p>The PuTTY setting &lsquo;Bolded text is a different colour&rsquo; is
+different from most other terminals: If enabled, then bold text
+will <em>only</em> be indicated using the brighter color (without otherwise
+boldifying the text at all). Other terminals tend to both render the text in
+bold font <em>and</em> use the brighter color. &ndash; In my opinion the best
+result is obtained by turning this option <em>off</em> in PuTTY (since actual
+boldness is more visually distinct than a <em>slight</em> change in color).</p>
+
+<figure>
+  <img src="putty-appearance.png" width="456" height="442">
+  <figcaption>
+    <ul>
+      <li>Enable &lsquo;ClearType&rsquo;</li>
+      <li>Enable &lsquo;Hide mouse pointer when typing in window&rsquo;</li>
+    </ul>
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="putty-translation.png" width="456" height="442">
+  <figcaption>
+    <ul>
+      <li>Set &lsquo;Received data assumed to be in which character set&rsquo; to &lsquo;UTF-8&rsquo;</li>
+    </ul>
+  </figcaption>
+</figure>
+
+
+
+<figure>
+  <img src="putty-colors.png" width="456" height="442">
+  <figcaption><ul>
+      <li>Disable &lsquo;Bolded text is a different colour&rsquo;</li>
+      <li>Set the all color values (see color table above)</li>
+    </ul>
+  </figcaption>
+</figure>
+
+
+
+<figure>
+  <img src="putty-connection.png" width="456" height="442">
+  <figcaption><ul>
+      <li>Set &lsquo;Seconds between keepalives&rsquo; to &lsquo;30&rsquo;</li>
+      <li>Enable &lsquo;Enable TCP keepalives&rsquo;</li>
+    </ul>
+  </figcaption>
+</figure>
+
+
+</div></section>
+
+</div></section><!--/div id="colors-content"-->
+
+
+<section>
+<h1 id="keys">Keys</h1>
+<div id="keys-content">
+
+<table class="normal-color">
+  <tr>
+    <th style="vertical-align: middle" colspan="2">Key
+    <th style="vertical-align: bottom" colspan="2">XTerm &<br>Gnome-Terminal
+    <th style="vertical-align: middle">URxvt
+    <th style="vertical-align: middle">PuTTY
+  <tr>
+    <th rowspan="10">
+    <th>Up
+    <td colspan="4"><small>Esc</small>OA / <small>Esc</small>[A
+  <tr>
+    <th>Down
+    <td colspan="4"><small>Esc</small>OB / <small>Esc</small>[B
+  <tr>
+    <th>Right
+    <td colspan="4"><small>Esc</small>OC / <small>Esc</small>[C
+  <tr>
+    <th>Left
+    <td colspan="4"><small>Esc</small>OD / <small>Esc</small>[D
+  <tr>
+    <th>Home
+    <td colspan="4"><small>Esc</small>[1~
+  <tr>
+    <th>Insert
+    <td colspan="4"><small>Esc</small>[2~
+  <tr>
+    <th>Delete
+    <td colspan="4"><small>Esc</small>[3~
+  <tr>
+    <th>End
+    <td colspan="4"><small>Esc</small>[4~
+  <tr>
+    <th>PgUp
+    <td colspan="4"><small>Esc</small>[5~
+  <tr>
+    <th>PgDn
+    <td colspan="4"><small>Esc</small>[6~
+
+  <tr>
+    <th rowspan="4">Shift
+    <th>Up
+    <td colspan="2"><small>Esc</small>[1;2A
+    <td><small>Esc</small>[a
+    <td class="bad"><small>Esc</small>OA / <small>Esc</small>[A
+  <tr>
+    <th>Down
+    <td colspan="2"><small>Esc</small>[1;2B
+    <td><small>Esc</small>[b
+    <td class="bad"><small>Esc</small>OB / <small>Esc</small>[B
+  <tr>
+    <th>Right
+    <td colspan="2"><small>Esc</small>[1;2C
+    <td><small>Esc</small>[c
+    <td class="bad"><small>Esc</small>OC / <small>Esc</small>[C
+  <tr>
+    <th>Left
+    <td colspan="2"><small>Esc</small>[1;2D
+    <td><small>Esc</small>[d
+    <td class="bad"><small>Esc</small>OD / <small>Esc</small>[D
+
+  <tr>
+    <th rowspan="4">Alt
+    <th>Up
+    <td colspan="2"><small>Esc</small>[1;3A
+    <td colspan="2"><small>EscEsc</small>OA / <small>EscEsc</small>[A
+  <tr>
+    <th>Down
+    <td colspan="2"><small>Esc</small>[1;3B
+    <td colspan="2"><small>EscEsc</small>OB / <small>EscEsc</small>[B
+  <tr>
+    <th>Right
+    <td colspan="2"><small>Esc</small>[1;3C
+    <td colspan="2"><small>EscEsc</small>OC / <small>EscEsc</small>[C
+  <tr>
+    <th>Left
+    <td colspan="2"><small>Esc</small>[1;3D
+    <td colspan="2"><small>EscEsc</small>OD / <small>EscEsc</small>[D
+
+  <tr>
+    <th rowspan="4">Ctrl
+    <th>Up
+    <td colspan="2"><small>Esc</small>[1;5A
+    <td><small>Esc</small>Oa
+    <td><small>Esc</small>[A / <small>Esc</small>OA *
+  <tr>
+    <th>Down
+    <td colspan="2"><small>Esc</small>[1;5B
+    <td><small>Esc</small>Ob
+    <td><small>Esc</small>[B / <small>Esc</small>OB *
+  <tr>
+    <th>Right
+    <td colspan="2"><small>Esc</small>[1;5C
+    <td><small>Esc</small>Oc
+    <td><small>Esc</small>[C / <small>Esc</small>OC *
+  <tr>
+    <th>Left
+    <td colspan="2"><small>Esc</small>[1;5D
+    <td><small>Esc</small>Od
+    <td><small>Esc</small>[D / <small>Esc</small>OD *
+</table>
+
+<p>Where two values are given they are given in the order &ldquo;<b>Application
+Mode / Normal Mode</b>&rdquo;, otherwise the same string is generated in both
+cases. Cells marked with red above cannot be distinguished from some other key
+(e.g. the unqualified version of the same key).</p>
+
+<p>* Note that these key codes are the same as the unqualified keys, except
+that the normal and application key strings have been swapped.</p>
+
+</div>
+</section><!--/section id="keys"-->
+
+<footer>by zrajm, &copy; 2012.</footer>
+</body>
+</html>
