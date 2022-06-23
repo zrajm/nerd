@@ -1,0 +1,57 @@
+<!DOCTYPE html><!--*-js-indent-level:2;css-indent-offset:2-*-->
+<!-- Copyright 2022 by zrajm. Licenses: CC BY-SA (text), GPLv2 (code). -->
+<meta charset="utf-8">
+<link rel=icon href="data:,">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  table { border-spacing: .5em .125em; border-collapse: collapse }
+  .icon { font-size: x-large; padding: 0 }
+  .size { padding-left: 1.5em; text-align: right }
+</style>
+<h1></h1>
+<table>
+  <thead>
+    <tr><th>Type<th>Name<th class="size">Size
+    <tr><th colspan=3><hr>
+  </thead>
+  <tbody></tbody>
+  <tfoot><tr><th colspan=3><hr></tfoot>
+</table>
+<address></address>
+<script>
+  const $ = (x, $ = document) => $.querySelector(x)
+  const icon = { parent: '🔙', dir: '📁', file: '📄', submodule: '🎁', symlink: '🔗' }
+  const [, user, path, repo, dir]
+    = location.href.match(/^\w+:\/\/([^.]+)[^/]*(\/([^/]+)\/([^?#]*?))\/?$/)
+  const url = `https://api.github.com/repos/${user}/${repo}/contents/${dir}`
+  const tableRow = f => `<tr title="${f.type}">`
+    + `<th class="icon">${icon[f.type]}`
+    + `<td><a href="${f.name}">${f.name !== '..' ? f.name : 'Parent directory'}</a>`
+    + `<td class="size">${f.type === 'file' ? prefix(f.size) : '–'}`
+
+  $('h1').innerHTML = `Index of ${path}`
+  $('address').innerHTML = `Filelist from API (<a href="${url}">${url}</a>).`
+
+  // https://stackoverflow.com/questions/15900485 (modified)
+  function prefix(size, decimals = 1, k = 1024) {
+    with (Math) {
+      const i = floor(log(size) / log(k))
+      return size ? parseFloat((size / pow(k, i)).toFixed(max(0, decimals)))
+        + 'B KB MB GB TB PB EB ZB YB'.split(' ')[i] : '0B'
+    }
+  }
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      if (data.message) {
+        $('table').innerHTML = `<b>GITHUB API ERROR:</b> ${data.message}`
+      } else {
+        $('tbody').innerHTML = [
+          { type: 'parent', name: '..' },
+          ...data
+            .filter(f => f.name !== 'index.html')
+            .sort((a, b) => a.name.localeCompare(b.name))
+        ].map(tableRow).join('')
+      }
+    })
+</script>
