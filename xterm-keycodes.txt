@@ -3,11 +3,11 @@ xterm:
   Pilar:             Shift+pilar:    
      upp     ^[[A	      upp     ^[[2A
      ner     ^[[B	      ner     ^[[2B
-     höger   ^[[C	      höger   ^[[2C
-     vänster ^[[D	      vänster ^[[2D
+     hÃ¶ger   ^[[C	      hÃ¶ger   ^[[2C
+     vÃ¤nster ^[[D	      vÃ¤nster ^[[2D
 
   Kontroll+pilar:    Kontroll+shift+pilar 
      upp     ^[[5A      upp     ^[[6A     
      ner     ^[[5B      ner     ^[[6B     
-     höger   ^[[5C      höger   ^[[6C     
-     vänster ^[[5D      vänster ^[[6D     
+     hÃ¶ger   ^[[5C      hÃ¶ger   ^[[6C     
+     vÃ¤nster ^[[5D      vÃ¤nster ^[[6D     

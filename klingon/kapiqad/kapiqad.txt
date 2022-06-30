@@ -44,7 +44,7 @@ Character Table:
    m (M)   m           Punctuation:
    n (N)   n            Key:    Glyph:
    o (O)   o            space   space
-   p (P)   p            _ (n/a) non­breaking space
+   p (P)   p            _ (n/a) nonÂ­breaking space
    q (Q)   q            , (n/a) ,;: (from SkyBox)
    r (R)   r            . (n/a) .?! (from SkyBox)
    s (S)   S
@@ -93,7 +93,7 @@ Institute,
 
 
 Unlike KLI's "KLIpIqaDmey" this typeface only contains *one* Klingon
-alphabet - pIqaD. (The old Mandel alphabet is not well suited for
+alphabet -Â pIqaD. (The old Mandel alphabet is not well suited for
 Klingon anyway. [for details see HolQeD 1:1 p.18])
 
 This font uses only lower case letters (so you will have to write
@@ -110,7 +110,7 @@ q={Q}) but some are not (f={ng} and x={tlh}).
 The glottal stop has been placed on the "z" (instead of the expected
 aphostrophe) simply to avoid the frustration that may occur due to
 the fact that most modern word processors interfere with the useage
-of apostrophes - replacing them with "typographically correct"
+of apostrophes -Â replacing them with "typographically correct"
 versions (thus effectively preventing one from writing this sign
 correctly).
 
@@ -126,26 +126,26 @@ Klingon Empire and Klingonska Akademien to be used.
 
 History:
 
-  V0.5ß: [1999­10­27]
+  V0.5ÃŸ: [1999Â­10Â­27]
     o Made the kerning pairs beginning with Klingonska Akademien's
       symbol.
 
-  V0.4ß: [1999­10­26]
+  V0.4ÃŸ: [1999Â­10Â­26]
     o Made the kerning pairs ending in Klingonska Akademien's
       symbol.
     o Created and added Klingonska Akademien's symbol.
 
-  V0.3ß: [1999­10­24]
+  V0.3ÃŸ: [1999Â­10Â­24]
     o Made space somewhat larger.
     o Corrected the path directions.
 
-  V0.2ß: [1999­10­24]
+  V0.2ÃŸ: [1999Â­10Â­24]
     o Made kerning data for comma and period.
     o General cleanup of (found) weird kerning pairs.
     o Made kerning data for the numbers glyphs (it was previously
       lacking).
 
-  V0.1ß: [1999­10­22]
+  V0.1ÃŸ: [1999Â­10Â­22]
     o Made kerning data for the StarTrekPi's Klingon Empire symbol.
     o Copied Klingon Empire symbol from the StarTrekPi typeface
       (canon version).
@@ -162,8 +162,8 @@ Future:
 
 
 President of Klingonska Akademien
-Björn X Öqvist
-Uppsala, 1999­10­26
+BjÃ¶rn X Ã–qvist
+Uppsala, 1999Â­10Â­26
 
 
 With special thanks Nick Nicholas, who originally brought the SkyBox
@@ -223,7 +223,7 @@ included for useage in "The Canon Klingon Dictionary". Hypen is
 there used to denote an affix (whether prefix or suffix is
 determined by placement before or after). Tilde indicate the current
 word, and the asterisk preceedes gramatically incorrect or
-non­existant example words and phrases.
+nonÂ­existant example words and phrases.
 
 Also note that the spacing between characters may be somewhat "off,"
 this sould not occur if you write in real Klingon since all kerning
