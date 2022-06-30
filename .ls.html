@@ -8,6 +8,7 @@
   .icon { font-size: x-large; padding: 0 }
   .size { padding-left: 1.5em; text-align: right }
 </style>
+<header></header>
 <h1></h1>
 <table>
   <thead>
@@ -18,19 +19,21 @@
   <tfoot><tr><th colspan=3><hr></tfoot>
 </table>
 <address></address>
+<footer></footer>
 <script>
   const $ = (x, $ = document) => $.querySelector(x)
   const icon = { parent: '🔙', dir: '📁', file: '📄', submodule: '🎁', symlink: '🔗' }
-  const [, user, path, repo, dir]
-    = location.href.match(/^\w+:\/\/([^.]+)[^/]*(\/([^/]+)\/([^?#]*?))\/?$/)
-  const url = `https://api.github.com/repos/${user}/${repo}/contents/${dir}`
+  const [, baseUrl, user, repo, dir]
+     = location.href.match(/^(\w+:\/\/([^.]+)[^/]*\/([^/]+)\/([^?#]*?))\/?(?:[^/]*[.]html)?$/)
+  const apiUrl = `https://api.github.com/repos/${user}/${repo}/contents/${dir}`
+
   const tableRow = f => `<tr title="${f.type}">`
     + `<th class="icon">${icon[f.type]}`
     + `<td><a href="${f.name}">${f.name !== '..' ? f.name : 'Parent directory'}</a>`
     + `<td class="size">${f.type === 'file' ? prefix(f.size) : '–'}`
 
-  $('h1').innerHTML = `Index of ${path}`
-  $('address').innerHTML = `Filelist from API (<a href="${url}">${url}</a>).`
+  $('h1').innerHTML = `Index of /${repo}/${dir && dir + '/'}`
+  $('address').innerHTML = `Filelist from API (<a href="${apiUrl}">${apiUrl}</a>).`
 
   // https://stackoverflow.com/questions/15900485 (modified)
   function prefix(size, decimals = 1, k = 1024) {
@@ -40,7 +43,7 @@
         + 'B KB MB GB TB PB EB ZB YB'.split(' ')[i] : '0B'
     }
   }
-  fetch(url)
+  fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
       if (data.message) {
@@ -49,9 +52,19 @@
         $('tbody').innerHTML = [
           { type: 'parent', name: '..' },
           ...data
-            .filter(f => f.name !== 'index.html')
+            .filter(f => f.name[0] !== '.' && f.name !== 'index.html')
             .sort((a, b) => a.name.localeCompare(b.name))
         ].map(tableRow).join('')
       }
+    })
+  fetch(`${baseUrl}/.head.html`)
+    .then(response => response.ok ? response.text() : '')
+    .then(html => {
+      $('header').innerHTML = html
+    })
+  fetch(`${baseUrl}/.foot.html`)
+    .then(response => response.ok ? response.text() : '')
+    .then(html => {
+      $('footer').innerHTML = html
     })
 </script>

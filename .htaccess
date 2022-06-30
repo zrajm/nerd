@@ -1,6 +1,0 @@
-AddHandler server-parsed .html
-HeaderName .head.html
-ReadmeName .foot.html
-Options All
-IndexOptions +ScanHTMLTitles +SuppressHTMLPreamble
-IndexOptions +NameWidth=30
