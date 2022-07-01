@@ -18,7 +18,7 @@ order).
              a, b, ch, D, e, gh, H, I, j, l, m, n, ng,
               o, p, q, Q, r, S, t, tlh, u, v, w, y, '
 
-Also the numbers 0-9 have been included, as well as the much debated
+Also the numbers 0–9 have been included, as well as the much debated
 and controversial punctuation marks that occurs on the SkyBox
 Trading Cards. Finally, although technically not signs of writing,
 the symbols of the Klingon Empire and Klingonska Akademien have been
@@ -44,7 +44,7 @@ Character Table:
    m (M)   m           Punctuation:
    n (N)   n            Key:    Glyph:
    o (O)   o            space   space
-   p (P)   p            _ (n/a) non­breaking space
+   p (P)   p            _ (n/a) non-breaking space
    q (Q)   q            , (n/a) ,;: (from SkyBox)
    r (R)   r            . (n/a) .?! (from SkyBox)
    s (S)   S
@@ -93,7 +93,7 @@ Institute,
 
 
 Unlike KLI's "KLIpIqaDmey" this typeface only contains *one* Klingon
-alphabet - pIqaD. (The old Mandel alphabet is not well suited for
+alphabet – pIqaD. (The old Mandel alphabet is not well suited for
 Klingon anyway. [for details see HolQeD 1:1 p.18])
 
 This font uses only lower case letters (so you will have to write
@@ -110,7 +110,7 @@ q={Q}) but some are not (f={ng} and x={tlh}).
 The glottal stop has been placed on the "z" (instead of the expected
 aphostrophe) simply to avoid the frustration that may occur due to
 the fact that most modern word processors interfere with the useage
-of apostrophes - replacing them with "typographically correct"
+of apostrophes – replacing them with "typographically correct"
 versions (thus effectively preventing one from writing this sign
 correctly).
 
@@ -126,33 +126,33 @@ Klingon Empire and Klingonska Akademien to be used.
 
 History:
 
-  V0.5ß: [1999­10­27]
+  V0.5ß: [1999-10-27]
     o Made the kerning pairs beginning with Klingonska Akademien's
       symbol.
 
-  V0.4ß: [1999­10­26]
+  V0.4ß: [1999-10-26]
     o Made the kerning pairs ending in Klingonska Akademien's
       symbol.
     o Created and added Klingonska Akademien's symbol.
 
-  V0.3ß: [1999­10­24]
+  V0.3ß: [1999-10-24]
     o Made space somewhat larger.
     o Corrected the path directions.
 
-  V0.2ß: [1999­10­24]
+  V0.2ß: [1999-10-24]
     o Made kerning data for comma and period.
     o General cleanup of (found) weird kerning pairs.
     o Made kerning data for the numbers glyphs (it was previously
       lacking).
 
-  V0.1ß: [1999­10­22]
+  V0.1ß: [1999-10-22]
     o Made kerning data for the StarTrekPi's Klingon Empire symbol.
     o Copied Klingon Empire symbol from the StarTrekPi typeface
       (canon version).
     o Copied period and comma from an old version of this font.
     o Copied the kerning pairs from the original KLIpIqaDmey
       typeface.
-    o Copied the glyphs (a-z [including glottal stop], 0-9 and
+    o Copied the glyphs (a–z [including glottal stop], 0–9 and
       Klingon Empire Symbol) from KLIpIqaDmey.
 
 
@@ -163,7 +163,7 @@ Future:
 
 President of Klingonska Akademien
 Björn X Öqvist
-Uppsala, 1999­10­26
+Uppsala, 1999-10-26
 
 
 With special thanks Nick Nicholas, who originally brought the SkyBox
@@ -186,7 +186,7 @@ punctuation signs to my attention.
 ====================================================================
 This typeface is produced with my own purposes in mind. Basically it
 is made for use in the printed version of "The Canon Klingon
-Dictionary," a pocket sized Klingon-English/English dictionary
+Dictionary," a pocket sized Klingon–English/English dictionary
 produced by The Klingon Academy, here in Sweden.
 
 Basically the keyboard layout follows the guidelines for the Klingon
@@ -223,7 +223,7 @@ included for useage in "The Canon Klingon Dictionary". Hypen is
 there used to denote an affix (whether prefix or suffix is
 determined by placement before or after). Tilde indicate the current
 word, and the asterisk preceedes gramatically incorrect or
-non­existant example words and phrases.
+non-existant example words and phrases.
 
 Also note that the spacing between characters may be somewhat "off,"
 this sould not occur if you write in real Klingon since all kerning
@@ -237,8 +237,8 @@ Institute's "KLIpIqaDmey." The original font by Ph.D. Lawrence M.
 Schoen included both the Mandel set of characters and the KLI
 endorsed {pIqaD} set. (Hence the plural form of the name.) I removed
 this since it is not suitable for the {tlhIngan Hol}, and the
-placement of the letters in the shifted position (A-Z rather than
-a-z) were not suited for my purposes. The placement of the numbers
+placement of the letters in the shifted position (A–Z rather than
+a–z) were not suited for my purposes. The placement of the numbers
 on the *shifted* number keys ("!@#$%^&*()") became *really* annoying
 when using a Swedish keyboard layout where these characters are
 somewhat rearranged.
