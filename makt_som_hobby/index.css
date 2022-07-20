@@ -181,4 +181,9 @@ table.center {
   margin-bottom: 1.5em;
 }
 
+hr {
+    color: #000;
+    margin: 2em 1.5em;
+}
+
 /* eof */
