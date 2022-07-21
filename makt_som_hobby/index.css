@@ -168,7 +168,8 @@ a.img {
   border: .15em solid black;
   clear: right;
   float: right;
-  margin: .75em 0em .75em .75em;  /* top right bottom left */
+  margin: .35em;
+  margin-right: 0;
   text-align: center;
   padding: .45em;
   text-decoration: none;
