@@ -164,28 +164,33 @@ table.center {
 /* = LINKS TO SCANS */
 a.img {
   display: block;
-  background-color: #ff8; /* light yellow */
-  border: .15em solid black;
+  background-color: #ff8;
+  border: .15rem solid #000;
   clear: right;
   float: right;
-  margin: .35em;
+  margin: .35rem;
   margin-right: 0;
   text-align: center;
-  padding: .45em;
+  padding: .45rem;
   text-decoration: none;
+  font: initial;
 }
 a.img img {
-  border-width: .15em;
+  border-width: .15rem;
   display: block;
   margin: auto;
 }
 a.img:hover { text-decoration: revert; }
 a.img:hover img { outline: 1px solid currentcolor; }
 
-.title {
-  clear: right;
-  margin-bottom: 1.5em;
+header {
+    background: #ff8;
+    border: .15em solid #000;
+    padding: .5em .75em;
+    text-align: center;
+    margin-bottom: 2em;
 }
+hgroup { text-align: center; }
 
 hr {
     color: #000;
