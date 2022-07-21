@@ -162,19 +162,24 @@ table.center {
 }
 
 /* = LINKS TO SCANS */
-.image {
+a.img {
+  display: block;
   background-color: #ff8; /* light yellow */
   border: .15em solid black;
   clear: right;
   float: right;
   margin: .75em 0em .75em .75em;  /* top right bottom left */
   text-align: center;
+  padding: .45em;
+  text-decoration: none;
 }
-.image img {
+a.img img {
   border-width: .15em;
   display: block;
-  margin: .45em;
+  margin: auto;
 }
+a.img:hover { text-decoration: revert; }
+a.img:hover img { outline: 1px solid currentcolor; }
 
 .title {
   clear: right;
