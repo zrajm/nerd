@@ -16,7 +16,7 @@ body {
   padding: 1.5em 3em;
   margin-left: auto;
   margin-right: auto;
-  max-width: 30em;
+  max-width: 45em;
   text-rendering: optimizeLegibility;
   box-shadow: 0 0 20em #000;
   /* word-spacing: .2ex; */
@@ -26,21 +26,17 @@ a:hover {
   background-color: #ff8;
 }
 
-p {
-  font-size: 1em;
+/* Indent non-first paragraphs. */
+p + p, p + aside + p, p + table + p { text-indent: 1.5em; }
+p:empty + p { margin-top: 1rem; }
+p:empty + p:not([hanging]) { text-indent: 0; }
+p[noindent] { text-indent: 0; }
+[blank] { margin: 1rem 0; }
+div[hanging] > p, p[hanging] {
+  padding-left: 1.5rem;
+  text-indent: -1.5rem;
 }
-
-p + p {
-  text-indent: 1.5em;
-}
-
-p.speech {
-  text-indent: .3em;
-}
-
-p.speech:before {
-  content: "\2013\2002";
-}
+div[hanging] > p > * { text-indent: 0; }
 
 h1, h2, h3 {
   font-family: Verdana, sans-serif;
@@ -75,26 +71,6 @@ h3 {
   letter-spacing: -0.0125ex;
 }
 
-ol.abc {
-  counter-reset: list;
-  list-style: none;
-}
-
-ol.abc li:before {
-  content: counter(list, lower-alpha) ") ";
-  counter-increment: list;
-}
-
-ol.number {
-  counter-reset: list;
-  list-style: none;
-}
-
-ol.number li:before {
-  content: counter(list) ") ";
-  counter-increment: list;
-}
-
 dt {
   font-weight: bold;
 }
@@ -102,7 +78,6 @@ dt {
 dd {
   margin-left: 1.5em;
 }
-
 
 /******************************************************************************/
 
@@ -127,38 +102,13 @@ small {
   line-height: 1.5em;
 }
 
-.top {
-  padding-top: 2.25em;
-}
-
-.bottom {
-  padding-bottom: 2.25em;
-}
-
-.center {
-  text-align: center;
-}
-
-.right {
-  text-align: right;
-}
+.center { text-align: center; }
+.right { text-align: right; }
 
 table.center {
   margin-left: auto;
   margin-right: auto;
   text-align: left;
-}
-
-.right {
-  text-align: right;
-}
-.nowrap {
-  white-space: nowrap;
-}
-
-.blankline {
-  text-indent: 0em;
-  margin-top: 1.5em;
 }
 
 /* = LINKS TO SCANS */
@@ -182,19 +132,35 @@ a.img img {
 }
 a.img:hover { text-decoration: revert; }
 a.img:hover img { outline: 1px solid currentcolor; }
+a.img[DONE] { background: #00f4; }
 
 header {
-    background: #ff8;
-    border: .15em solid #000;
-    padding: .5em .75em;
-    text-align: center;
-    margin-bottom: 2em;
+  background: #ff8;
+  border: .15em solid #000;
+  padding: .5em .75em;
+  text-align: center;
+  margin-bottom: 2em;
 }
 hgroup { text-align: center; }
 
 hr {
-    color: #000;
-    margin: 2em 1.5em;
+  color: #000;
+  margin: 2em 1.5em;
 }
+
+table.definition {
+  border-collapse: collapse;
+}
+table.definition td, table.definition th {
+  text-align: left;
+  vertical-align: top;
+  padding: 0 .5em;
+}
+table.definition th {
+  font: inherit;
+  font-style: italic;
+}
+
+aside:not(:empty), blockquote { margin: 2rem 1.5rem; }
 
 /* eof */
