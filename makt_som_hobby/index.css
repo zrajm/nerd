@@ -168,4 +168,6 @@ table.definition th {
 
 aside:not(:empty), blockquote { margin: 2rem 1.5rem; }
 
+[upper] { text-transform: uppercase; }
+
 /* eof */
