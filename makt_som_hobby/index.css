@@ -41,7 +41,8 @@ p[noindent] { text-indent: 0; }
 [blank] { margin: 1rem 0; }
 div[hanging] > p, p[hanging] {
   padding-left: 1.5rem;
-  text-indent: -1.5rem;
+  /* Uses '!important' to override text-indent for non-hanging paragraphs.*/
+  text-indent: -1.5rem !important;
 }
 div[hanging] > p > * { text-indent: 0; }
 
