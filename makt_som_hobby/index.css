@@ -27,8 +27,10 @@ body {
   /* word-spacing: .2ex; */
 }
 
+a { text-decoration: none; }
 a:hover {
   background-color: #ff8;
+  text-decoration: revert;
 }
 
 /* Indent non-first paragraphs. */
@@ -127,7 +129,6 @@ a.img {
   margin-right: 0;
   text-align: center;
   padding: .45rem;
-  text-decoration: none;
   font: initial;
 }
 a.img img {
@@ -135,7 +136,6 @@ a.img img {
   display: block;
   margin: auto;
 }
-a.img:hover { text-decoration: revert; }
 a.img:hover img { outline: 1px solid currentcolor; }
 a.img[DONE] { background: #00f4; }
 
