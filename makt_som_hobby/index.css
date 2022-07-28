@@ -122,7 +122,7 @@ table.center {
 /* = LINKS TO SCANS */
 a.img {
   display: block;
-  background-color: #ff8;
+  background: #00f4;
   border: .15rem solid #000;
   clear: right;
   float: right;
@@ -138,7 +138,6 @@ a.img img {
   margin: auto;
 }
 a.img:hover img { outline: 1px solid currentcolor; }
-a.img[DONE] { background: #00f4; }
 
 header {
   background: #ff8;
