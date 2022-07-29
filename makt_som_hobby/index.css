@@ -123,7 +123,8 @@ table.center {
 a.img {
   display: block;
   background: #00f4;
-  border: .15rem solid #000;
+  border: 1px solid #0003;
+  border-radius: 5px;
   clear: right;
   float: right;
   margin: .35rem;
@@ -133,15 +134,21 @@ a.img {
   font: initial;
 }
 a.img img {
-  border-width: .15rem;
   display: block;
   margin: auto;
 }
-a.img:hover img { outline: 1px solid currentcolor; }
+a.img:hover img {
+  opacity: .9;
+}
+a.img:hover {
+  border-color: #0005;
+  background: #00f5;
+}
 
 header {
-  background: #ff8;
-  border: .15em solid #000;
+  background: #00f4;
+  border: 1px solid #0003;
+  border-radius: 5px;
   padding: .5em .75em;
   text-align: center;
   margin-bottom: 2em;
