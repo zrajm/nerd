@@ -4,17 +4,38 @@
   <meta charset="utf-8">
   <title>Colour of Drones in The Culture Universe.</title>
   <style>
-    hgroup { margin: 1em 0; text-align: center; }
+    @media (prefers-color-scheme: dark) {
+        html { background: #000; color: #ccc }
+    }
+    hgroup { margin: 1em 0; text-align: center; font-size: 120%; }
     hgroup * { margin: 0; }  /* zero margins for elements inside hgroup */
+    html { line-height: 1.6; font-size: 18px }
+    body { max-width: 45rem; margin: auto }
+    mark { background: yellow; filter: invert(1) }
+    table { caption-side: bottom; }
+    table[align="center"] {
+        margin-left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        width: fit-content;
+    }
+    caption {
+        margin: .25rem 0;
+        max-width: 100%;
+        text-align: center;         /* optional alignment */
+        white-space: normal;        /* allow line breaks */
+    }
     table.text {
         border-collapse: collapse;
         border: none;
         margin: 1em auto;
-        caption-side: bottom;
     }
     table.text td, table.text th {
-        border: 2px solid #000;
+        border: none;
         padding: 0 .25em;
+    }
+    @media (prefers-color-scheme: dark) {
+        table.text td, table.text th { border-color: currentColor; }
     }
     table.text th {
         border: none;
@@ -25,36 +46,171 @@
     a {
         text-decoration: none;
     }
+    table { border-collapse: collapse; }
+    th, td {
+        &:empty { border: none }
+        padding: .125rem .25rem;
+        font-family: sans;
+        border: 1px solid currentColor;
+        text-shadow:
+            0  0 1px black,
+            0  0 1px black,
+            0  0 1px black,
+            0  0 1px black,
+            0  0 1px black,
+            0  0 1px black,
+            0  0 1px black,
+            0  0 1px black,
+            0  0 1px black,
+            0  0 1px black,
+            0  0 1px black,
+            0  0 2px black,
+            0  0 2px black,
+            0  0 2px black,
+            0  0 2px black,
+            0  0 2px black,
+            0  0 2px black,
+            0  0 2px black,
+            0  0 2px black,
+            0  0 2px black,
+            0  0 2px black,
+            0  0 2px black,
+            0 -1px 0 black, /* above */
+            0  1px 0 black, /* below */
+           -1px 0 0 black, /* left */
+            1px 0 0 black, /* right */
+           -1px -1px 0 black, /* above left */
+            1px -1px 0 black, /* above right */
+           -1px  1px 0 black, /* below left */
+            1px  1px 0 black; /* below right */
+    }
+    .rainbow {
+        background: linear-gradient(
+            125deg in oklch,
+            oklch(0.78 0.22 0),
+            oklch(0.78 0.22 60),
+            oklch(0.78 0.22 120),
+            oklch(0.78 0.22 180),
+            oklch(0.78 0.22 240),
+            oklch(0.78 0.22 300),
+            oklch(0.78 0.22 360));
+    }
+    .olivepurple {
+        background: linear-gradient(
+            125deg,
+            olive 0%,
+            olive 10%,
+            purple 10%,
+            purple 20%,
+            olive 20%,
+            olive 30%,
+            purple 30%,
+            purple 40%,
+            olive 40%,
+            olive 50%,
+            purple 50%,
+            purple 60%,
+            olive 60%,
+            olive 70%,
+            purple 70%,
+            purple 80%,
+            olive 80%,
+            olive 90%,
+            purple 90%,
+            purple 100%);
+    }
+    .maintable td { min-width: 10em }
+
+    footer {
+        width: fit-content;
+        padding: .5rem 1.5rem;
+        margin: 2rem auto 1rem;
+        border: solid currentColor;
+        border-width: 1px 0;
+    }
+    tt {
+        background: #444;
+        border-radius: .125rem;
+        padding: 1px .125em;
+    }
   </style>
 </head>
 
 <!-- Created: 1999-03-01 -->
-<!-- Updated: 2007-01-23 (added UoW notes + latin1 to utf8 conv -->
-<!-- Updated: 2014-04-04 (addet Matter) -->
+<!-- Updated: 2007-01-23 (added Use of Weapon notes + latin1 to utf8 conv -->
+<!-- Updated: 2014-04-04 (added Matter) -->
+<!-- Updated: 2026-02-15 -->
 
 <hgroup>
 <h1>The Colour of Drones</h1>
-<h2>(in <I>The Culture</I> universe by Iain M. Banks)</h2>
+<p>(in <I>The Culture</I> universe by Iain M. Banks)</p>
 </hgroup>
 
-<blockquote>“The drone’s aura blanched briefly with anger, then settled to grey
-frustration mixed with spots of purple contrition. It quickly rippled into
-yellow-green, indicating mellowness and friendliness, hatched with bands of red
-to show it was taking this as a bit of joke.” <nobr>/<i>Look to Windward,</i>
-p.317</nobr></blockquote>
+<blockquote style="width:fit-content;margin:2rem auto">
+  ‘Is that what those colours mean?’
+  <br>‘I don’t think so.’
+  <br>‘That’s just grey, isn’t it?’
+  <br>‘I think technically it’s gunmetal.’
+  <br>‘And is that magenta?’
+  <br>‘More violet. […]’
+  <p align=right><i>/Look to Windward,</i> p.211
+</blockquote
 
-<p>Are you as curious as I am as to what exacly these drones <i>mean</i> with
-their weird colours? If you know of any references to them in Iain
-Banks’ <i>The Culture</i> books that isn’t included below, please write to me
-(<i><a href="mailto:zrajm@klingonska.org">zrajm@klingonska.org</a></i>) and
-tell me about it.
+<p>Are you as curious as I am as to what exactly these drones <i>mean</i> with
+their weird colours? If you know of any references to them in Iain M.
+Banks’ <i>The Culture</i> books that isn’t included below, please write me an
+email (<i><a href="mailto:zrajm@klingonska.org">zrajm@klingonska.org</a></i>)
+and tell me about it.
 
 <p>It is my intention to analyze these colours somewhat further (this because I
-have actually thought of creating a colour-based “body language” myself—this is
-one of the main reasons for me reading Banks today at all. When I spoke of “my”
+have actually thought of creating a colour-based ‘body language‘ myself—this is
+one of the main reasons for me reading Banks today at all. When I spoke of ‘my’
 language with a friend of mine [Thomas Gylfe] he said it reminded him of Iain
-Banks drones. And I just had to read something. – I started with <i>Use of
+Banks drones. And I just had to read something.—And so I started with <i>Use of
 Weapons</i> and ended up getting caught…)
+
+<p align=right>
+  /by zrajm,
+  <br>created 1 March 1999,
+  <br>last update 16 February 2026
+
+
+<h2>Contents</h2>
+<div style="columns:20rem; gap:0rem; column-rule:2px solid currentColor">
+  <ul style="margin:0">
+    <li><a href=#spectrum>By Spectrum</a>
+    <li><a href=#other>Another Table</a>
+    <li><a href=#better>Is a Better Understanding Possible?</a>
+    <li><a href=#references>References</a>
+      <ul>
+        <li><a href=#1987><i>Consider Phlebas</i> (1987)</a>
+        <li><a href=#1988><i>The Player of Games</i> (1988)</a>
+        <li><a href=#1990><i>Use of Weapons</i> (1990)</a>
+        <li><a href=#1989><i>The State of the Art</i> (1989)</a>
+        <li><a href=#1996><i>Excession</i> (1996)</a>
+        <li><a href=#2000><i>Look to Windward</i> (2000)</a>
+        <li><a href=#2008><i>Matter</i> (2008)</a>
+        <li><a href=#2010><i>Surface Detail</i> (2010)</a>
+        <li><a href=#2012><i>The Hydrogen Sonata</i> (2012)</a>
+      </ul>
+    <li><a href=#appendix>Appendix</a>
+  </ul>
+</div>
+
+<p><b>NOTE:</b> This article needs some more work. Even though references was
+updated on 16 February 2026, the summarizing tables below were not adjusted to
+reflect the new data.
+
+
+<h2 id=spectrum>By Spectrum</h2>
+
+<p>The below text does not attempt to analyze the motion of the colors, but it
+looks like that certain verbs (and adjectives!) are used more in combination
+with certain colors. ‘Flashed’ is frequently used with white (anger), grey
+(frustration) and rainbow (surprise/confusion), while ‘glow’ is used with red
+(pleasure) and pink (amusement). Among adjectives ‘frosty’ is often used for
+blue (and once for grey).—Also, does ‘rainbow’ and ‘rainbowed’ entail a
+movement of color, or is it a static thing?
 
 <p align=center>
 <b><font color=red>Red</font> ·
@@ -66,16 +222,15 @@ Weapons</i> and ended up getting caught…)
 <font color=violet>Violet</font></b>
 
 
-<table class=text>
+<table align=center>
   <caption>
-    Drone colours in approximate spectrum order. Colours values are not
+    Drone colours in approximate spectrum order. Colour values are not
     formalized, but intended for a rough overview only.
   </caption>
 
   <tr>
     <th colspan=2>Colour</th>
     <th>Mood</th>
-    <th>Sources</th>
   </tr>
 
   <tr><td align=center>
@@ -83,7 +238,6 @@ Weapons</i> and ended up getting caught…)
     </td>
     <td>mirror / silver</td>
     <td>ostrentatiously uncommunicable, do-not-disturb</td>
-    <td>PoG pp.15, 110</td>
   </tr>
 
   <tr>
@@ -92,7 +246,6 @@ Weapons</i> and ended up getting caught…)
     </td>
     <td><a href="http://en.wikipedia.org/wiki/White">white</a></td>
     <td>anger</td>
-    <td>PoG pp.15, 46, 47, 111; Exc pp.102, 106, 285; LtW p.324</td>
   </tr>
 
   <tr>
@@ -101,7 +254,6 @@ Weapons</i> and ended up getting caught…)
     </td>
     <td><a href="http://en.wikipedia.org/wiki/Grey">grey</a> / grey-white (deep-grey)</td>
     <td>displeasure, frustration <nobr>(darker = more frustrated)</nobr></td>
-    <td>PoG pp.9, 12, 62, 91; Exc pp.125, 126, 179, 285; LtW p.318, 324</td>
   </tr>
 
   <tr><td align=center>
@@ -109,7 +261,6 @@ Weapons</i> and ended up getting caught…)
     </td>
     <td><a href="http://en.wikipedia.org/wiki/Rosy_(color)">rosy</a> / vaguely rosy</td>
     <td>humour</td>
-    <td>PoG pp.19, 153; Exc pp.175, 221</td>
   </tr>
 
   <tr><td align=center>
@@ -117,7 +268,6 @@ Weapons</i> and ended up getting caught…)
     </td>
     <td><a href="http://en.wikipedia.org/wiki/Red">red</a></td>
     <td>humorous pleasure, pleasure, happiness, laugh</td>
-    <td>PoG pp.10, 46, 47, 77</td>
   </tr>
 
   <tr><td align=center>
@@ -125,7 +275,6 @@ Weapons</i> and ended up getting caught…)
     </td>
     <td><a href="http://en.wikipedia.org/wiki/Orange_(colour)">orange</a> / <a href="http://en.wikipedia.org/wiki/Orange-red#Orange-red">orange-red</a></td>
     <td>well-being</td>
-    <td>PoG pp.13, 95</td>
   </tr>
 
   <tr><td align=center>
@@ -133,7 +282,6 @@ Weapons</i> and ended up getting caught…)
     </td>
     <td><a href="http://en.wikipedia.org/wiki/Yellow-green#Yellow-green">yellow-green</a></td>
     <td>mellow approachability, calm friendliness</td>
-    <td>PoG pp.110, 111, 123; Exc p.103</td>
   </tr>
 
   <tr><td align=center>
@@ -141,7 +289,6 @@ Weapons</i> and ended up getting caught…)
     </td>
     <td><a href="http://en.wikipedia.org/wiki/Green">green</a></td>
     <td>friendliness</td>
-    <td>PoG p.45</td>
   </tr>
 
   <tr><td align=center>
@@ -149,7 +296,6 @@ Weapons</i> and ended up getting caught…)
     </td>
     <td><a href="http://en.wikipedia.org/wiki/Aquamarine_(color)">aquamarine</a></td>
     <td>modesty</td>
-    <td>LtW p.24</td>
   </tr>
 
   <tr><td align=center>
@@ -157,7 +303,6 @@ Weapons</i> and ended up getting caught…)
     </td>
     <td><a href="http://en.wikipedia.org/wiki/Blue">blue</a></td>
     <td>formal</td>
-    <td>PoG pp.9, 13, 91; Exc p.107, 328</td>
   </tr>
 
   <tr><td align=center>
@@ -165,7 +310,6 @@ Weapons</i> and ended up getting caught…)
     </td>
     <td><a href="http://en.wikipedia.org/wiki/Purple">purple</a></td>
     <td>contrition</td>
-    <td>PoG pp.13, 110; LtW p.21</td>
   </tr>
 
   <tr><td align=center>
@@ -173,205 +317,11 @@ Weapons</i> and ended up getting caught…)
     </td>
     <td><a href="http://en.wikipedia.org/wiki/Brown">brown</a></td>
     <td>displeasure, ill-humor</td>
-    <td>PoG pp.9, 10, 13, 91; Exc p.285</td>
   </tr>
 </table>
 
-<table class=text>
-  <tr><th colspan=4 align=center>Uninterpreted References</th></tr>
 
-  <tr><td align=center>
-      <table><tr><td width=20 height=20 bgcolor="#8888ff"> </td></tr></table>
-    </td>
-    <td COLSPAN=2>“frosty blue” / “a frostily blue Churt Lyne”</td>
-    <td>PoG p.15; Exc p.179</td>
-  </tr>
-
-  <tr><td align=center>
-      <table><tr><td width=20 height=20 bgcolor="#556"> </td></tr></table>
-    </td>
-    <td COLSPAN=2>“Its gunmetal aura indicated puzzlement.”</td>
-    <td>PoG p.15; LtW p.20</td>
-  </tr>
-
-  <tr><td align=center>
-      <table><tr><td width=20 height=20 bgcolor="#"> </td></tr></table>
-    </td>
-    <td COLSPAN=2>“dully red”</td>
-    <td>PoG p.16</td>
-  </tr>
-
-  <tr><td align=center>
-      <table><tr><td width=20 height=20 bgcolor="#"> </td></tr></table>
-    </td>
-    <td COLSPAN=2>“its fields bright blue and striped yellow”</td>
-    <td>PoG p.31</td>
-  </tr>
-
-  <tr><td align=center>
-      <table><tr><td width=20 height=20 bgcolor="#"> </td></tr></table>
-    </td>
-    <td COLSPAN=2>“grey yellow with resignation”</td>
-    <td>PoG p.114</td>
-  </tr>
-
-  <tr><td align=center>
-      <table><tr><td width=20 height=20 bgcolor="#"> </td></tr></table>
-    </td>
-    <td COLSPAN=2>“gone black-body”</td>
-    <td>PoG p.143</td>
-  </tr>
-
-  <tr><td align=center>
-      <table><tr><td width=20 height=20 bgcolor="#"> </td></tr></table>
-    </td>
-    <td COLSPAN=2>“spot of rainbow light”—tight-beam communication
-      with only one individual</td>
-    <td>PoG p.15</td>
-  </tr>
-
-
-  <tr><td align=center>
-      <table><tr><td width=20 height=20 bgcolor="#"> </td></tr></table>
-    </td>
-    <td COLSPAN=2>“colored with embarressment”</td>
-    <td>Exc p.115</td>
-  </tr>
-
-  <tr><td align=center>
-      <table><tr><td width=20 height=20 bgcolor="#"> </td></tr></table>
-    </td>
-    <td COLSPAN=2>“a soft blush of magenta” (busy)</td>
-    <td>LtW p.15</td>
-  </tr>
-
-  <tr><td align=center>
-      <table><tr><td width=20 height=20 bgcolor="#"> </td></tr></table>
-    </td>
-    <td COLSPAN=2>“blue-grey” (politely held-in-check frustration)</td>
-    <td>LtW p.17</td>
-  </tr>
-
-  <tr><td align=center>
-      <table><tr><td width=20 height=20 bgcolor="#"> </td></tr></table>
-    </td>
-    <td COLSPAN=2>“a sort of muddy cream colour” (embarressment)
-      <br>“The drone went muddy cream with embarressment.”</td>
-    <td>LtW pp.20, 316</td>
-  </tr>
-
-  <tr><td align=center>
-      <table><tr><td width=20 height=20 bgcolor="#"> </td></tr></table>
-    </td>
-    <td COLSPAN=2>“ruddy orange” (?)</td>
-    <td>LtW p.21</td>
-  </tr>
-
-  <tr><td align=center>
-      <table><tr><td width=20 height=20 bgcolor="#"> </td></tr></table>
-    </td>
-    <td COLSPAN=2>“aura rainbowed with brief suprise”</td>
-    <td>LtW p.24</td>
-  </tr>
-
-  <tr><td align=center>
-      <table><tr><td width=20 height=20 bgcolor="#"> </td></tr></table>
-    </td>
-    <td COLSPAN=2>“extending a blue-ping field in an arc towards the
-      Chelgrian’s shoulders”</td>
-    <td>LtW p.127</td>
-  </tr>
-
-  <tr><td align=center>
-      <table><tr><td width=20 height=20 bgcolor="#"> </td></tr></table>
-    </td>
-    <td COLSPAN=2>“It’s aura fields looked very rosy against the cream
-      of the couch it rested on.”</td>
-    <td>LtW p.128–129</td>
-  </tr>
-
-  <tr><td align=center>
-      <table><tr><td width=20 height=20 bgcolor="#"> </td></tr></table>
-    </td>
-    <td COLSPAN=2>“Tersono’s aura field blushed with pleasure […] The drone’s
-      field collapsed back to a frosty blue”</td>
-    <td>LtW p.129</td>
-  </tr>
-
-  <tr><td align=center>
-      <table><tr><td width=20 height=20 bgcolor="#"> </td></tr></table>
-    </td>
-    <td COLSPAN=2>“Kabe caught a hint of a bossoming purple field
-      flattening and disspating in the direction of the girl”</td>
-    <td>LtW p.129</td>
-  </tr>
-
-  <tr><td align=center>
-      <table><tr><td width=20 height=20 bgcolor="#F77FBE"> </td></tr></table>
-    </td>
-    <td COLSPAN=2>“Tersono had positively glowed with rosy approval”</td>
-    <td>LtW p.133</td>
-  </tr>
-
-  <tr><td align=center>
-      <table><tr><td width=20 height=20 bgcolor="#"> </td></tr></table>
-    </td>
-    <td COLSPAN=2>“Its aura positively shone with ruby light”</td>
-    <td>LtW p.304</td>
-  </tr>
-
-  <tr><td align=center>
-      <table><tr><td width=20 height=20 bgcolor="#4B47FF"> </td></tr></table>
-    </td>
-    <td COLSPAN=2>“Oh no! Tersono said, aura fields flashing briefly
-      blue.”</td>
-    <td>LtW p.304</td>
-  </tr>
-
-  <tr><td align=center>
-      <table><tr><td width=20 height=20 bgcolor="#"> </td></tr></table>
-    </td>
-    <td COLSPAN=2>“The drone’s aura field suddenly rainbowed with
-      confusion.”</td>
-    <td>LtW p.316</td>
-  </tr>
-
-  <tr><td align=center>
-      <table><tr><td width=20 height=20 bgcolor="#"> </td></tr></table>
-    </td>
-    <td COLSPAN=2>“[…] the machine said, wobbling in the air with what
-      looked like anger, frustration or both. Its aura fields looked
-      confused.”</td>
-    <td>LtW p.316</td>
-  </tr>
-
-  <tr><td align=center>
-      <table><tr><td width=20 height=20 bgcolor="#"> </td></tr></table>
-    </td>
-    <td COLSPAN=2>“It flushed creamily rainbow with surprise and
-      embarressment.”</td>
-    <td>LtW p.380</td>
-  </tr>
-</table>
-
-<table border=1 align=center class=text>
-  <tr><td>PoG</td><td><I>Player of Games</I></td></tr>
-  <tr><td>Exc</td><td><I>Excession</I></td></tr>
-  <tr><td>LtW</td><td><I>Look to Windward</I></td></tr>
-  <tr><td>UoW</td><td><I>Use of Weapons</I></td></tr>
-</table>
-
-<table align=center>
-  <tr><td>‘Is that what those colours mean?’
-      <br>‘I don’t think so.’
-      <br>‘That’s just grey, isn’t it?’
-      <br>‘I think technically it’s gunmetal.’
-      <br>‘And is that magenta?’
-      <br>‘More violet […]’</td></tr>
-  <tr><td align=right>/Look to Windward, p.211</td></tr>
-</table>
-
-<h1>Another Table</h1>
+<h2 id=other>Another Table</h1>
 
 <p>I made a little table of the colours occuring above, in the attempt to see
 if there’s a system to it. Down the middle you’ll find the colours of the
@@ -382,48 +332,52 @@ well as-is either.
 
 <p>If anyone could suggest improvements, I would be happy to implement them.
 
+<p>One thing that is not easy to indicate in the table below is brightness.
+Presumably there’s nothing stopping a Banksiain drone from shining brightly to
+illuminate a whole room (for the most intense white <i>anger</i> or lurid
+orange <i>distress</i>).
 
-<p><font size=2><table>
+<table align=center class=maintable>
 <tr>
     <td bgcolor="#000000" style="color:#ffffff">black
-        <br>(?)
+        <br><i>?</i>
     </td>
     <td bgcolor="#444444" style="color:#ffffff">deep-grey / dark
-        <br>(sorrow)
+        <br><i>sorrow</i>
     </td>
     <td bgcolor="#888888">grey
-        <br>(displeasure / frustation)
+        <br><i>displeasure / frustation</i>
     </td>
     <td bgcolor="#bbbbbb">grey-white
-        <br>(?)
+        <br><i>?</i>
     </td>
     <td bgcolor="#ffffff">white
-        <br>(anger)
+        <br><i>anger</i>
     </td>
 </tr>
 <tr>
     <td></td>
     <td bgcolor="#964b00">brown
-        <br>(displeasure/ill-humor)
+        <br><i>displeasure/ill-humor</i>
     </td>
     <td bgcolor="#caa468">muddy cream
-        <br>(embarressment)
+        <br><i>embarressment</i>
     </td>
     <td bgcolor="#ffbb55">lurid orange
-        <br>(extreme distress)
+        <br><i>extreme distress</i>
     </td>
     <td></td>
 </tr>
 <tr>
     <td></td>
     <td bgcolor="#660000">deep red / dully red
-        <br>(?)
+        <br><i>?</i>
     </td>
     <td bgcolor="#ff0000">red
-        <br>(happiness / laugh)
+        <br><i>happiness / laugh</i>
     </td>
     <td bgcolor="#ff8888">pink
-        <br>(amusement)
+        <br><i>amusement</i>
     </td>
     <td></td>
 </tr>
@@ -431,7 +385,7 @@ well as-is either.
     <td></td>
     <td></td>
     <td bgcolor="#ff5500">ruddy orange
-        <br>(?)
+        <br><i>?</i>
     </td>
     <td></td>
     <td></td>
@@ -440,7 +394,7 @@ well as-is either.
     <td></td>
     <td></td>
     <td bgcolor="#ff8800">orange
-        <br>(wellbeing)
+        <br><i>wellbeing</i>
     </td>
     <td></td>
     <td></td>
@@ -448,10 +402,10 @@ well as-is either.
 <tr>
     <td></td>
     <td bgcolor="#aa9944">grey yellow
-        <br>(resignation)
+        <br><i>resignation</i>
     </td>
     <td bgcolor="#ffff00">yellow
-        <br>(¿relaxed? / ¿calm?)
+        <br><i>¿relaxed? / ¿calm?</i>
     </td>
     <td></td>
     <td></td>
@@ -460,7 +414,7 @@ well as-is either.
     <td></td>
     <td></td>
     <td bgcolor="#88dd00">yellow-green
-        <br>(mellowness / calm friendliness)
+        <br><i>mellowness / calm friendliness</i>
     </td>
     <td></td>
     <td></td>
@@ -468,10 +422,10 @@ well as-is either.
 <tr>
     <td></td>
     <td bgcolor="#808000">olive
-        <br>(?)
+        <br><i>?</i>
     </td>
     <td bgcolor="#00ff00">green
-        <br>(friendliness)
+        <br><i>friendliness</i>
     </td>
     <td></td>
     <td></td>
@@ -480,23 +434,23 @@ well as-is either.
     <td></td>
     <td></td>
     <td bgcolor="#6fefd4">aquamarine
-        <br>(modesty)
+        <br><i>modesty</i>
     </td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td bgcolor="#556">gunmetal
-        <br>(puzzlement)
+        <br><i>puzzlement</i>
     </td>
     <td bgcolor="#7777aa">blue-grey<sup>*</sup>
-        <br>(politely held-in-check frustation)
+        <br><i>politely held-in-check frustation</i>
     </td>
     <td bgcolor="#0000ff">blue
-        <br>(formal)
+        <br><i>formal</i>
     </td>
     <td bgcolor="#8888ff">frosty blue
-        <br>(?)
+        <br><i>?</i>
     </td>
     <td></td>
 </tr>
@@ -504,7 +458,7 @@ well as-is either.
     <td></td>
     <td></td>
     <td bgcolor="#aa00ff">violet
-        <br>(?)
+        <br><i>?</i>
     </td>
     <td></td>
     <td></td>
@@ -513,7 +467,7 @@ well as-is either.
     <td></td>
     <td></td>
     <td bgcolor="#ff00ff">magenta
-        <br>(busy)
+        <br><i>busy</i>
     </td>
     <td></td>
     <td></td>
@@ -522,7 +476,7 @@ well as-is either.
     <td></td>
     <td></td>
     <td bgcolor="#c71585">purple
-        <br>(contrition / regret)
+        <br><i>contrition / regret</i>
     </td>
     <td></td>
     <td></td>
@@ -531,7 +485,7 @@ well as-is either.
     <td></td>
     <td></td>
     <td bgcolor="#ff007f">rosy(?)
-        <br>(humour / approval)
+        <br><i>humour / approval</i>
     </td>
     <td></td>
     <td></td>
@@ -539,15 +493,8 @@ well as-is either.
 <tr>
     <td></td>
     <td></td>
-    <td><table border=0 cellspacing=0><tr>
-        <td bgcolor=red><b> r </b></td>
-        <td bgcolor=orange><b> a </b></td>
-        <td bgcolor=yellow><b> i </b></td>
-        <td bgcolor=green><b> n </b></td>
-        <td bgcolor=blue><b> b </b></td>
-        <td bgcolor=indigo><b> o </b></td>
-        <td bgcolor=violet><b> w </b></td>
-        </tr><tr><td colspan=7>(surprise / confusion)</td></tr></table>
+    <td class=rainbow>rainbow
+      <br><i>humour / approval</i>
     </td>
     <td></td>
     <td></td>
@@ -555,15 +502,13 @@ well as-is either.
 <tr>
     <td></td>
     <td></td>
-    <td><table border=0 cellspacing=0><tr>
-        <td bgcolor="#808000"><b> olive </b></td>
-        <td bgcolor="#c71585"><b> purple </b></td>
-        </tr><tr><td colspan=7>(awe)</td></tr></table>
+    <td class=olivepurple>olive/purple
+      <br><i>awe</i>
     </td>
     <td></td>
     <td></td>
 </tr>
-</table></font>
+</table>
 
 <p><sup><b>*</b></sup> The reference to “blue-grey” might not actually refer to
 one color, but could, as far as I understand, equally well be ment to refer to
@@ -573,7 +518,7 @@ a pattern with of blue and grey parts.
 colours affect emotion</a> might also be interesting reading.
 
 
-<h1>Is a Better Understanding Possible?</h1>
+<h2 id=better>Is a Better Understanding Possible?</h1>
 
 <p>As you might have noticed, humans show emotions too: Somewhat akin to the
 body langugage of colour which Iain M. Banks’ drones display. I just figured it
@@ -626,113 +571,840 @@ course (it most notably can’t lie <i>badly</i>, or in any other way display
 several conflicting emotions at once).
 
 
-<h1>Quotes</h1>
+<h2 id=references>References</h1>
 
-<h2><i>Use of Weapons</i> (1990)</h2>
+
+<h3 id=1987><i>Consider Phlebas</i> (1987)</h2>
+
+<p><b>FIXME:</b> This book has <i>not yet</i> been searched for drone color
+references using method outlined in <a href=#appendix>Appendix</a>. /16
+February 2026
+
+<ul>
+  <li>Page ? (rosy → amused): The screen displaying what the scout missile
+    could see showed a tree a hundred meters behind the last, trundling wagon.
+    The tree jerked and the top three-quarters slid at a steep angle down the
+    sloped stump that was the bottom quarter before toppling to the dust. “That
+    took a flick,” the drone said, glowing briefly <b>rosy</b> again and
+    sounding <i>amused</i>. The wagons and siege engines filled the view coming
+    from the knife missile. “The first bit’s actually the trickiest …”
+</ul>
+
+
+<h3 id=1988><i>The Player of Games</i> (1988)</h2>
+
+<p><b>NOTE:</b> This book has been searched for drone color references using
+method outlined in <a href=#appendix>Appendix</a>. Edition used here makes use
+of American spelling (‘gray’, ‘color’ etc). /15 February 2026
+
+<ul>
+  <li>Page 9 (gray, brown, blue → formal): “He turned to face the small drone
+    which had floated up to him as he re-entered the richly furnished hall.
+    People stood talking, or clustered around game-boards and tables beneath
+    the great banners of ancient tapestries. There were dozens of drones in the
+    room too, some playing, some watching, some talking to humans, a few in the
+    formal, lattice-like arrangements which meant they were communicating by
+    transceiver. Mawhrin-Skel, the drone which had addressed him, was by far
+    the smallest of the machines present; it could have sat comfortably on a
+    pair of hands. Its aura field held shifting hints of <b>gray</b>
+    and <b>brown</b> within the band of <i>formal</i> <b>blue</b>. It looked
+    like a model of an intricate and old-fashioned spacecraft.”
+
+  <li>Page 10 (red → humorous pleasure, brown → displeasure): “Gurgeh sensed
+    the people around him grow a little quieter. Mawhrin-Skel’s aura fields
+    switched to a mixture of <b>red</b> and <b>brown</b>; <i>humorous
+    pleasure</i>, and <i>displeasure</i>, together; a contrary signal close to
+    a direct insult.”
+
+  <li>Page ? (red): “Gurgeh sensed ‘Cheap trick,’ Mawhrin-Skel said, for all to
+    hear. ‘The kid was easy meat. You’re losing your touch.’ Its field flashed
+    bright <b>red</b>, and it bounced through the air, over people’s heads and
+    away.”
+
+  <li>Page ? (yellow): ‘“Allow me,’ Chamlis Amalk-ney murmured, gently taking
+    the glass from his hand and placing it on a passing tray a good three
+    meters away. Its <b>yellow</b>-tinged field brought back a full glass of
+    the same rich wine. Gurgeh accepted it.”
+
+  <li>Page 12 (gray-white → displeased): “Chamlis’s aura flickered a
+    <i>displeased</i> <b>gray-white</b>. It set the glass down noisily on the
+    table and threw the savory into a distant bin. ‘It’s that dreadful machine
+    Mawhrin-Skel,’ Chamlis said testily.”
+
+  <li>Page 13 (orange → well-being, purple → contrition): “‘You are a
+    mischievous and contrary device,’ Boruelal said to the drone Mawhrin-Skel,
+    floating at her shoulder, its aura field <b>orange</b>
+    with <i>well-being</i>, but circled with little <b>purple</b> motes of
+    unconvincing <i>contrition</i>.”
+
+  <li>Page 13 (blue → formal, brown → ill-humor): “‘Anatomy lesson,’ it said,
+    its fields collapsing to a mixture of <i>formal</i> <b>blue</b>
+    and <b>brown</b> <i>ill-humor</i>.”
+
+  <li>Page 15 (white → anger, bright rippling spot of rainbow light →
+    tight-beam communication): “‘Meatbrain,’ Mawhrin-Skel told Chamlis
+    Amalk-ney, and zoomed off toward the line of open windows. The older
+    drone’s aura field flashed white with anger and a bright, rippling spot of
+    rainbow light revealed that it was using its tight-beam transceiver to
+    communicate with the departing machine. Mawhrin-Skel stopped in midair;
+    turned. Gurgeh held his breath, wondering what Chamlis could have said, and
+    what the smaller drone might say in reply, knowing that it wouldn’t bother
+    to keep its remarks secret, as Chamlis had.”
+
+  <li>Page 15 (mirror → ostrentatiously uncommunicable): “Mawhrin-Skel became a
+    <b>mirror</b>ed sphere, and in that <i>ostentatiously uncommunicable</i>
+    mode swept out of the hall into the darkness.”
+
+  <li>Page 15 (blue): “‘Cretinous whelp,’ Chamlis said, fields
+    frosty <b>blue</b>.”
+
+  <li>Page 15 (gunmetal → puzzlement): “‘A sheltered upbringing?’ Chamlis
+    Amalk-ney said. ‘On a GSV?’ Its <b>gunmetal</b> aura
+    indicated <i>puzzlement</i>.”
+
+  <li>Page 16 (red): “‘Just what I need,’ Chamlis said, aura dully <b>red</b>.”
+
+  <li>Page 19 (rosy): “‘So people can live on it?’ Chamlis suggested,
+    fields <b>rosy</b>.”
+
+  <li>Page 31 (blue, yellow): “He heard a roaring noise in the sky, and looked
+    up to see a farside-lit vapor-trail overhead, steeply angled and pointing
+    to the slope uphill from Ikroh. There was a muffled bang over the forest
+    above the house, and a noise like a sudden gust of wind, then, zooming
+    round the side of the house, came a small drone, its fields
+    bright <b>blue</b> and striped <b>yellow</b>.”
+
+  <li>Page ? (blue): “‘I’ve found your young adversary,’ the small drone
+    announced. It extended one softly glowing <b>blue</b> field and plucked a
+    nightflower from a growing vine.”
+
+  <li>Page 45 (blue → formal, green → friendliness): “‘Well enough.’ He watched
+    Mawhrin-Skel maneuver itself beside Olz Hap, floating over the table beside
+    her plate, fields all <i>formal</i> <b>blue</b>
+    and <b>green</b> <i>friendliness</i>.”
+
+  <li>Page 46 (red → pleasure): “Mawhrin-Skel’s fields glowed <b>red</b> with
+    pleasure, momentarily brighter than the coals. ‘Oh good,’ it said. ‘A
+    fight.’”
+
+  <li>Page 46 (white → anger): “‘Yes, I’d like you to,’ Gurgeh said, watching
+    Mawhrin-Skel’s fields flicker <b>white</b> with <i>anger</i> in front of
+    him.”
+
+  <li>Page 47 (white → rage): “Mawhrin-Skel’s fields blazed brightly,
+    painfully <b>white</b>, lighting up the entire balcony for a second; people
+    stopped talking and turned; the music hesitated. The tiny drone seemed
+    almost literally to shake with dumb <i>rage</i>.”
+
+  <li>Page 47 (red → happiness): “Chamlis Amalk-ney, <b>red</b>
+    with <i>happiness</i>, tipped to look up into the dark sky, where a small
+    hole appeared briefly in the cloud cover. ‘Oh dear,’ it said. ‘Do you think
+    I said something to upset it?’”
+
+  <li>Page 62 (gray → frustration): “He turned back into the room again.
+    Something about the square, the whole village, disgusted and angered him.
+    Yay was right; it was all too safe and twee and ordinary. They might as
+    well be on a planet. He walked over to where Chamlis floated, near the long
+    fishtank. Chamlis’s aura was tinged with <b>gray</b> <i>frustration</i>.
+    The old drone gave an exasperated shudder and picked up a little container
+    of fish-food; the tank lid lifted and Chamlis sprinkled some of the food
+    grains onto the top of the water; the glittering mirrorfish moved silkily
+    up to the surface, mouths working rhythmically.”
+
+  <li>Page 77 (red → laugh): “For the first time, the drone showed an aura,
+    flashing briefly <b>red</b>. There was a <i>laugh</i> in its voice, too. ‘I
+    wouldn’t expect you’d get very far trying that. No; the empire falls under
+    the general definition of a ‘state,’ and the one thing states always try to
+    do is to ensure their own existence in perpetuity.’”
+
+  <li>Page 91 (blue → formal): “‘A decision.’ The machine floated level with
+    his face. Its fields were <i>formal</i> <b>blue</b>. ‘Will you speak for
+    me?’”
+
+  <li>Page 91 (blue, brown, gray): “‘A … condition?’ the drone said. Its fields
+    became briefly visible, a glittering mixture of <b>blue</b>
+    and <b>brown</b> and <b>gray</b>.”
+
+  <li>Page 95 (orange-red): “Mawhrin-Skel’s fields glowed <b>orange-red</b>. It
+    floated over to Gurgeh, its gray body shining brightly, fields all but
+    extinguished in the bright sunshine. ‘Thank you,’ it said to him. ‘I wish
+    you a good journey, and much luck.’”
+
+  <li>Page 110 (yellow-green → mellow approachability): “‘Good day, Jernau
+    Gurgeh,’ said the drone Flere-Imsaho in its squeaky little voice, settling
+    delicately on the plump arm of the chair. As usual, its aura field
+    was <b>yellow-green</b>; <i>mellow approachability</i>.”
+
+  <li>Page 110 (purple → contrite, silver → do-not-disturb): “Gurgeh looked
+    down at the drone. ‘I see,’ he said coldly. ‘Well, I was growing tired of
+    the problem anyway.’ He turned back to the equations, adjusting the
+    floating terminal so that its screen hid Flere-Imsaho from his sight. The
+    drone stayed silent, went a confused medley of <i>contrite</i>
+    <b>purple</b> and <i>do-not-disturb</i> <b>silver</b>, and flew away.”
+
+  <li>Page 111 (yellow-green → mellow approachability/calm friendliness, white
+    → anger): “‘Have you seen this!’ Flere-Imsaho yelped one day, floating
+    quickly up to him in the pool’s airstream cabinet, where Gurgeh was drying
+    off. Behind the little machine, attached to it by a thin strand of field
+    still colored <b>yellow-green</b> (but speckled
+    with <i>angry</i> <b>white</b>), there floated a large, rather
+    old-fashioned and complicated-looking drone.”
+
+  <li>Page 114 (gray yellow → resignation): “Flere-Imsaho and the ship remote
+    made a show of looking at each other, then the small library drone
+    flushed <b>gray yellow</b> with <i>resignation</i>, and said in its high
+    voice, ‘All right, let’s go back to the beginning …’”
+
+  <li>Page 123 (yellow-green): “‘Well what, Jernau Gurgeh?’ Flere-Imsaho said,
+    its <b>yellow-green</b> fields extending from its tiny casing like the
+    wings of some exotic insect. It laid a ceremonial robe on Gurgeh’s bed.
+    They were in the module, which now rested on the roof-garden of
+    Groasnachek’s Grand Hotel.”
+
+  <li>Page 143 (black): “Gurgeh got in touch with the ship that night.
+    Flere-Imsaho had declared itself bored; it had discarded its casing, gone
+    blackbody, and floated off unseen into the night to visit a city park where
+    there were some nocturnal birds.”
+
+  <li>Page 153? (rosy): “The man left the module’s lounge. The little drone
+    hovered steadily in midair for a while. ‘Oops,’ it said to itself,
+    eventually, then, with a shrug-like wobble, swooped away, fields
+    vaguely <b>rosy</b>.”
+
+  <li>Page ? (gray → frustration, green-yellow): “Gurgeh turned away from the
+    drone and back to the module-screen, where he was studying some classic ten
+    games. Flere-Imsaho was <b>gray</b> with <i>frustration</i>. The normal
+    <b>green-yellow</b> aura it displayed when out of its disguise had been
+    growing increasingly pale over the past few days. Gurgeh almost felt sorry
+    for it.”
+
+  <li>Page ? (green-yellow): “Gurgeh turned away from the ‘I believe so. I
+    think I know you well enough to tell. Please come, Jernau Gurgeh. You’ll be
+    glad, I swear. Please come. You did say you wouldn’t sleep, didn’t you?
+    Well then, what do you have to lose?’ The drone’s fields were their normal
+    <b>green-yellow</b> color, quiet and controlled. Its voice was low,
+    serious.”
+
+  <li>Page ? (yellow-green): “The blade snapped, clipped off by a
+    flickering <b>yellow-green</b> field. Nicosar felt the weight of the sword
+    change, and looked up in disbelief. The blade dangled uselessly in midair,
+    suspended from the little white disk that was Flere-Imsaho.”
+
+  <li>Page ? (green-yellow): “Nicosar threw the sword-handle at Gurgeh;
+    a <b>green-yellow</b> field caught it, propelled it back at Nicosar; the
+    Emperor ducked. He staggered across the board in a storm of smoke and
+    swirling leaves. The cinderbuds thrashed; flashes of white and yellow burst
+    from between their trunks as the wall of flames above them beat toward the
+    castle.”
+
+  <li>Page ? (orange-red): “Gurgeh’s pale, pinched face broke into a smile. He
+    put his bag down and looked at them both: Yay, fresh-faced and grinning,
+    leaping over the couch; and Chamlis, fields <b>orange-red</b>, setting the
+    tray down on the table before the banked fire. Yay thudded into him, arms
+    round him, hugging him, laughing. She drew back.”
+
+  <li>Page ? (red): “Gurgeh presented the heavy little trophy to Chamlis, who
+    went red with pleasure. ‘You vindictive old horror,’ Yay snorted.”
+
+  <li>Page ? (rosy → amused): “The screen displaying what the scout missile
+    could see showed a tree a hundred meters behind the last, trundling wagon.
+    The tree jerked and the top three-quarters slid at a steep angle down the
+    sloped stump that was the bottom quarter before toppling to the dust. ‘That
+    took a flick,’ the drone said, glowing briefly <b>rosy</b> again and
+    sounding <i>amused</i>. The wagons and siege engines filled the view coming
+    from the knife missile. ‘The first bit’s actually the trickiest …’”
+
+</ul>
+
+
+<h3 id=1990><i>Use of Weapons</i> (1990)</h2>
+
+<p><b>FIXME:</b> This book has <i>not yet</i> been searched for drone color
+references using method outlined in <a href=#appendix>Appendix</a>. /16
+February 2026
 
 <p><b>Some Notes:</b> When cleaning up and throwing away old papers, I found
 some notes from when I was (re-)reading <i>Use of Weapons</i>. I thought I’d
-better add the stuff to this page. <i>/zrajm [2007-01-23]</i>
+better add the stuff to this page. <i>/zrajm, 23 January 2007</i>
 
-<p>“the mixture of purple regret and gunmetal puzzlement looked distinctly
-unconvincing.” /<i>Use of Weapons,</i> p.19
+<ul>
+  <li>Page 19 (purple -> regret, gunmetal → puzzlement): “the mixture of purple
+    regret and gunmetal puzzlement looked distinctly unconvincing.”
 
-<p>“going dark with sorrow” /<i>Use of Weapons,</i> p.19
+  <li>Page 19 (dark): “going dark with sorrow”
 
-<p>“The drone flashed rainbow in surprise” /<i>Use of Weapons,</i> p.19
+  <li>Page 19 (rainbow → surprise): “The drone flashed rainbow in surprise”
 
-<p>“The blade broke cleanly on a bump of red coloured field just above the
-machine’s casing…” /<i>Use of Weapons,</i> p.40
+  <li>Page (red) 40: “The blade broke cleanly on a bump of red coloured field
+    just above the machine’s casing…”
 
-<p>“Both field components where shaded deep red, the colour of drone
-pleasure.” /<i>Use of Weapons,</i> p.40
+  <li>Page 40 (red): “Both field components where shaded deep red, the colour
+    of drone pleasure.”
 
-<p>“ME NEITHER it printed on it’s aura field, in letters of grey on a rosy
-background.” /<i>Use of Weapons,</i> p.54
+  <li>Page 54 (grey, rosy): “ME NEITHER it printed on it’s aura field, in
+    letters of grey on a rosy background.”
 
-<p>“[…] glancing at the drone, which was keeping a standard pattern of formal
-blue on its aura field, apart from one large red dot on its side that probably
-only she could see; it was pulsating rapidly. When she noticed it she almost
-started laughing herself.” /<i>Use of Weapons,</i> p.54
+  <li>Page 54 (blue → formal, pulsing red → laughter): “[…] glancing at the
+    drone, which was keeping a standard pattern of formal blue on its aura
+    field, apart from one large red dot on its side that probably only she
+    could see; it was pulsating rapidly. When she noticed it she almost started
+    laughing herself.”
 
-<p>“Sma was aware of Skaffen-Amitskaw glowing red just behind her.” /<i>Use of
-Weapons,</i> p.55
+  <li>Page 55 (red): “Sma was aware of Skaffen-Amitskaw glowing red just behind
+    her.”
 
-<p>“[…] its aura field flashing the lurid orange that was used to signal Sick
-Drone in Extreme Distress.” /<i>Use of Weapons,</i> p.56
+  <li>Page 56 (orange): “[…] its aura field flashing the lurid orange that was
+    used to signal Sick Drone in Extreme Distress.”
 
-<p>“Its red glowing field looked at least partially as a comment” /<i>Use of
-Weapons,</i> p.77–78
+  <li>Page 77–78 (red): “Its red glowing field looked at least partially as a
+    comment”
 
-<p>“field set a weird mixture of olive and purple, which she seemed to remember
-indicated Awe.” /<i>Use of Weapons,</i> p.79
+  <li>Page 79 (olive/purple → awe): “field set a weird mixture of olive and
+    purple, which she seemed to remember indicated Awe.”
 
-<p>“Skaffen-Amitskaw flashed a delicate shade of purple, imitating contrition”
-/<i>Use of Weapons,</i> p.85
+  <li>Page 85 (purple → contrition): “Skaffen-Amitskaw flashed a delicate shade
+    of purple, imitating contrition”
 
-<p>“[…] as Skaffen-Amtiskaw’s fields went frosty.” /<i>Use of Weapons,</i>
-p.101
+  <li>Page 101 (frosty): “[…] as Skaffen-Amtiskaw’s fields went frosty.”
 
-<p>“Skaffen-Amtiskaw’s fields glowed pink with amusement.” /<i>Use of
-Weapons,</i> p.122
+  <li>Page 122 (pink → amusement): “Skaffen-Amtiskaw’s fields glowed pink with
+    amusement.”
 
-<p>“‘Hmm?’ the machine said, its aura field flashing the pink he was beginning
-to identify as drone amusement.” /<i>Use of Weapons,</i> p.256
-
-
-<h2><i>Surface Detail</i> (2010)</h2>
-
-<p><i>The following quotes has not (yet) been added to the charts above.</i>
-
-<p>“It was surrounded by a vague, misty halo that appeared to be various
-mixtures of yellow, green and blue according to the angle. This would be its
-aura field – the drone equivalent of facial expression and body language, there
-to convey emotions.” /<i>Surface Detail,</i> p.229
-
-<p>“[…] I would be derelict in my duty if I didn’t remain where I might be of
-most immediate protective use, especially while you’re asleep. It might be best
-for Us both to get used to that arrangement, don’t you think?’ ‘No,’ she said.
-‘I prefer my privacy.’ ‘I see.’ The machine bobbed in the air, its aura field
-going grey-blue.” /<i>Surface Detail,</i> p.234
-
-<p>“The little drone’s aura field glowed an agreeable pink.” /<i>Surface
-Detail,</i> p.241
-
-<p>“[…] as the little cream-coloured drone’s field flashed a bright grey.”
-/<i>Surface Detail,</i> p.241
-
-<p>“Kallier-Falpise’s fields went frosty grey again. ‘You did not ask me if I
-consent to being Displaced when a far more intrinsically safe method of
-transferring us between ships exists to hand.’” /<i>Surface Detail,</i> p.214
+  <li>Page 256 (pink → amusement): “‘Hmm?’ the machine said, its aura field
+    flashing the pink he was beginning to identify as drone amusement.”
+</ul>
 
 
-<h2><i>Matter</i> (2008)</h2>
+<h3 id=1989><i>The State of the Art</i> (1989)</h2>
 
-<p><i>The following quotes has not (yet) been added to the charts above.</i>
+<p><b>FIXME:</b> This book has <i>not yet</i> been searched for drone color
+references using method outlined in <a href=#appendix>Appendix</a>. /16
+February 2026
 
-<p>“The drone’s aura fields, invisible until now, flowed rosily for a moment or
-two. ‘This,’ it said, ‘should be fun.’” /<i>Matter,</i> p.5
-
-<p>“Its fields flashed a frosty blue.” /<i>Matter,</i> p.78
+<p>(missing)
 
 
-<h2><i>The Hydrogen Sonata</i> (2012)</h2>
+<h3 id=1996><i>Excession</i> (1996)</h2>
 
-<p><i>The following quotes has not (yet) been added to the charts above.</i>
+<p><b>NOTE:</b> This book has been searched for drone color references using
+method outlined in <a href=#appendix>Appendix</a>. Edition used here makes use
+of British spelling (‘grey’, ‘colour’ etc). /15 February 2026
 
-<p>“The little drone suddenly developed an aura field, turning a crisp
-blue-grey.” /<i>Hydrogen Sonata,</i> p.244
+<ul>
+  <li>Page 102 (white → angry): “‘What?’ yelped Churt Lyne. The drone darted
+    round in front of her; she almost bumped into it. ‘Ulver!’ the machine
+    said, sounding <i>angry</i>. Its aura field flashed <b>white</b>.
+    ‘Really!’”
 
-<p>“The ship drone’s aura flashed amused red then disappeared.” /<i>Hydrogen
-Sonata,</i> p.245
+  <li>Page 103 (yellow green → calm friendliness): “The drone took her hands
+    again in fields coloured <b>yellow green</b> with <i>calm friendliness</i>,
+    bringing her down off her toes. ‘Young lady,’ it said. ‘I shall never say
+    anything more truthful to you than these two things. One; there will be
+    plenty more gorgeous young men in your life. Two; you will never have a
+    better chance of getting into Contact, even Special Circumstances, and with
+    them owing you a favour; or two. Do you understand? This is your big
+    chance, girl.’”
 
+  <li>Page 106 (white): “‘Didn’t even know this place existed,’ she said,
+    drawing one black-gloved finger along the desk’s surface. The displays
+    altered and the desk made a chirping noise; Churt Lyne slapped her hand
+    away, going ‘tssk’ while its aura field flashed <b>white</b>. She glowered
+    at the machine, inspected the grey rim of dust on her finger tip, and
+    smeared it on the casing of the drone.”
+
+  <li>Page 107 (blue → formal): “‘Right,’ the drone said. A maniple field
+    coloured <i>formal</i> <b>blue</b> extended from the machine’s casing and
+    dragged a small sculpted metal seat over, placing it behind her and then
+    shoving it quickly forward; she had no choice but to plonk down into it.”
+
+  <li>Page ? (frostily blue): ‘Well, if you hadn’t turned off the date/time
+    function …’ muttered the drone, colouring <b>frosty blue</b>. Ulver rolled
+    her eyes again. ‘The Excession was discovered and that signal sequence plus
+    comments dates from twelve days ago. The Excession’s discovery was
+    announced through the standard channels the day before yesterday.’
+
+  <li>Page 115 (? → embarrassment): “‘Wehhll,’ Churt Lyne said, drawing the
+    word out while its aura-field coloured with <i>embarrassment</i> and its
+    body wobbled in the air, ‘technically – maybe – the ability to travel –
+    easily – to other universes.’ The machine paused again, looking at the
+    human and waiting for her sarcastic reply. When she didn’t say anything, it
+    continued. ‘It should be possible to step outside the time-strand of our
+    universe as easily as a ship steps outside the space-time fabric. It might
+    then become feasible to travel through superior hyperspace upwards to
+    universes older than ours, or through inferior hyperspace downwards to
+    universes younger than our own.’”
+
+  <li>Page 125 (grey → frustration): “‘No I’m not. I’m just saying it’s …
+    semi-possible.’ The drone’s aura field flickered <b>grey</b>
+    with <i>frustration</i>. ‘In that event, though, I don’t think it would be
+    breakability they’d be worried about.’”
+
+  <li>Page 126 (grey): “‘Oh good grief, no,’ the drone said, its aura field
+    briefly <b>grey</b> again.”
+
+  <li>Page 126 (grey): “‘No you’re not,’ hissed the drone, aura fields going
+    deep <b>grey</b>. ‘You just have to be there.’”
+
+  <li>Page ? (grey → frustration): “‘Oh,’ the machine said, aura field
+    briefly <b>grey</b> with <i>frustration</i>. ‘All right. Late breakfast.
+    But before noon, in any event.’”
+
+  <li>Page 175 (blue → formal, rosy → humor): “It lifted out of her way, then
+    turned smoothly and followed her across the floor of the bedroom towards
+    the bathroom, its fields <i>formal</i> <b>blue</b> but tinged with
+    a <b>rosy</b> <i>humour</i>.”
+
+  <li>Page 179 (grey → frustration, off-black): “The goodbyes took a while.
+    Churt Lyne glowed <b>grey</b>er and <b>grey</b>er with <i>frustration</i>
+    until it turned into a sort of <b>off-black</b> sphere; then it dropped its
+    aura field altogether and sped out of the nearest opened window. It raced
+    around in the air outside for a while; a couple of sonic booms nearly had
+    the mounts bolting.”
+
+  <li>Page 179 (blue): “Eventually, though, Ulver had said her farewells,
+    decided to leave all her animals and two trunks of clothes behind and then
+    - having remained serene in the midst of much hullabaloo and some tears
+    from Klatsli - entered a traveltube with a frostily <b>blue</b> Churt Lyne
+    and was taken to the Forward Docks and a big, brightly lit hangar, where
+    the Psychopath Class ex-Rapid Offensive Unit Frank Exchange of Views was
+    waiting for her.”
+
+  <li>Page 221 (rosy → humor): “Gestra stared at the drone, obviously
+    distressed, but the machine patted him on the shoulder with a <b>rosy</b>
+    field and said, ‘It’ll be all right, Gestra. I thought it only polite to
+    grant their request, but you can stay out of their way if you like. Saying
+    hello to them at first would probably go down well, but it isn’t
+    compulsory.’ The Mind had its drone study the man for a moment, checking
+    his breathing, heart rate, pupil dilation, skin response, pheromone output
+    and brain-waves. ‘I know what,’ it said soothingly, ‘we’ll tell them you’ve
+    taken a vow of silence, how’s that? You can greet them formally, nod, or
+    whatever, and I’ll do the talking. Would that be all right?’
+
+  <li>Page 285 (grey → frustration, brown → displeasure/ill-humor, white →
+    anger): “Somehow, it gave the impression that it was staring at the screen.
+    Its aura field was flickering as though it was undergoing rapid
+    mood-changes; mostly it displayed a mixture of <b>grey</b>, <b>brown</b>
+    and <b>white</b>.—<i>Frustration</i>, <i>displeasure</i> and <i>anger</i>.
+    Not an encouraging combination.”
+
+  <li>Page 328 (blue): “Genar-Hofoen could see the girl’s suit shaking; it
+    started to rock from side to side. She must be throwing herself around
+    inside it as best she could. The suit came close to overbalancing and
+    falling. The little slave-drone extended a <b>blue</b> field to steady it.
+    Genar-Hofoen wondered how strong the urge had been to just let it fall.“
+</ul>
+
+
+<h3 id=2000><i>Look to Windward</i> (2000)</h2>
+
+<p><b>NOTE:</b> This book has been searched for drone color references using
+method outlined in <a href=#appendix>Appendix</a>. Edition used here makes use
+of British spelling (‘grey’, ‘colour’ etc). /15 February 2026
+
+<ul>
+  <li>Page 15 (magenta → busy): “Its aura field, confined to a small volume
+    directly underneath its flat base, was a soft blush of <b>magenta</b>,
+    which, if Kabe recalled correctly, meant it was <i>busy</i>. Busy talking
+    to him?”
+
+  <li>Page 17 (blue-grey → politely held-in-check frustration): “‘Tersono,’
+    Ziller said, turning at last to the drone, which had lowered itself to his
+    shoulder level and edged closer and closer as it had tried to attract the
+    Chelgrian’s attention over the past few moments, during which time its aura
+    field had just started to shade into the
+    <b>blue-grey</b> of <i>politely held-in-check frustration</i>.”
+
+  <li>Page 20 (gunmetal → puzzlement): “The drone’s <b>gunmetal</b> aura
+    indicated <i>puzzlement</i>. ‘We don’t know.’”
+
+  <li>Page 20 (muddy cream → embarrassment; red): “‘Excessive,’ Ziller said
+    pointedly. The drone’s aura field flushed a sort of <b>muddy cream</b>
+    colour to indicate <i>embarrassment</i>, though a few flecks of <b>red</b>
+    indicated it was hardly acute.”
+
+  <li>Page 21 (ruddy orange): “‘Without?’ Tersono said, field glowing a
+    <b>ruddy orange</b>. ‘Why, as I say, you have almost nothing but–’”
+
+  <li>Page 21 (purple): “The drone’s aura lapsed back to <b>purple</b>. It
+    wobbled minutely in the chair. ‘You are welcome to try, my dear Ziller.
+    However that might be taken as a terrible insult.’”
+
+  <li>Page 21?/22? (purple): “The drone, misted in <b>purple</b>, went quiet
+    for a moment. Kabe shifted on his cushions. ‘The point is,’ Tersono
+    continued, ‘that even the most wilful and, ah, characterful of ships might
+    not accede to the sort of request you have indicated you might make. In
+    fact I’d wager quite heavily on it that they wouldn’t.’”
+
+  <li>Page 24 (aquamarine → modesty): “‘Oh, we had a real one,’ Ziller said. ‘I
+    thought we’d have an image.’ He looked at Tersono, which allowed itself a
+    faint glow of <b>aquamarine</b> <i>modesty</i>.”
+
+  <li>Page 24 (rainbow → surprise): ‘Really?’ the drone’s aura <b>rainbowed</b>
+    with brief <i>surprise</i>. ‘For whom?’
+
+  <li>Page 127 (blue-pink): “Chomba was glaring at the drone. Quilan tilted his
+    head to see past Tersono’s body and look at her as Tersono, extending
+    a <b>blue-pink</b> field in an arc towards the Chelgrian’s shoulders,
+    ushered him forwards. The floating platform carrying Quilan’s bags followed
+    him into the module; the doors closed and became a screen again. ‘Now,’
+    said the drone, ‘we are all here to say welcome, obviously, but also to let
+    you know that we are entirely at your disposal for the duration of your
+    visit, however long that may be.’” (<b>NOTE:</b> To me “blue-pink” sounds
+    like an impossible color, but Banks elsewhere use “blue-pink” in reference
+    to the sky [in <i>Consider Phlebas</i>], and the sky at dawn [in <i>The
+    Player of Games</i>] and so I think its meant to refer to a single hue, not
+    a pattern of two colors.)
+
+  <li>Page 128–129 (rosy): “‘Cr Ziller continues to grace us with his
+    presence,’ Tersono agreed. Its aura field looked very <b>rosy</b> against
+    the cream of the couch it rested on. ‘Hub here is being very modest in not
+    immediately extolling the numerous virtues of Masaq’ Orbital, but let me
+    assure you it is a place of almost innumerable delights. Masaq’ Great–’
+
+  <li>Page 129 (blush → pleasure, frosty blue): “‘He would claim not to be,’
+    Kabe said, ‘though I think in his music over the last few years I have
+    detected a certain plaintive harking back to traditional Chelgrian folk
+    themes, with hints of eventual resolution implicit in their serial
+    development.’ From the corner of one eye, Kabe saw Tersono’s aura field
+    <b>blush</b> with <i>pleasure</i> as he said this. ‘Though that may mean
+    nothing, of course,’ he added. The drone’s field collapsed back to
+    a <i>frosty blue</i>.”
+
+  <li>Page 129 (purple): “‘The darling child may find the maestro’s music still
+    beyond her,’ the drone said. Kabe caught a hint of a
+    blossoming <b>purple</b> field flattening and dissipating in the direction
+    of the girl sitting on the edge of the pool. He saw Chomba’s mouth work but
+    suspected Tersono had thrown some sort of field wall between her and the
+    rest of the party. He could just about hear that she had said something,
+    but had no idea what it was. Chomba herself either hadn’t noticed or didn’t
+    care. She was concentrating on the fish.”
+
+  <li>Page 133 (rosy → approval): “They had asked him whether he wanted to go
+    straight to the house they had provided for him, or if he would like to
+    take in part of Masaq’ Great River, and one of its famous barges, where a
+    small reception had been arranged. He’d said he would be happy to take them
+    up on their kind offer. The Hub avatar had looked quietly pleased; the
+    drone Tersono had positively glowed with <b>rosy</b> <i>approval</i>.”
+
+  <li>Page 211 (grey/gunmetal, magenta/violet): “‘Is that what those colours
+    mean?’
+    <br>‘I don’t think so.’
+    <br>‘That’s just <b>grey</b>, isn’t it?’
+    <br>‘I think technically it’s <b>gunmetal</b>.’
+    <br>‘And is that <b>magenta</b>?’
+    <br>‘More <b>violet</b>. Though of course your eyes are different from
+    mine.’
+    <br>‘Ahem.’”
+
+  <li>Page 304 (ruby): “‘Oh! I’m sure he is just teasing us,’ Tersono said
+    quickly. Its aura field positively shone with <b>ruby</b> light. ‘Of course
+    Cr Ziller will be there. How could he not be? He’ll be there. I’m quite
+    certain.’”
+
+  <li>Page 304 (blue): “‘Oh no!’ Tersono said, aura flushing briefly
+    <b>blue</b>. ‘There’s no need for that. No, not at all; I’m sure
+    that Cr Ziller has every intention of being there. He may leave it until
+    the last moment before he sets off, but set off he will, I’m quite
+    positive. Please, Major Quilan, you must be there for the concert. Ziller’s
+    first symphony in eleven years, the first ever première outside Chel, you,
+    coming all this way, you two the only Chelgrians for millennia … You must
+    be there. It will be the experience of a lifetime!”
+
+  <li>Chapter 14, page? (pink → ¿upbeat/perky?) “‘So. My friends; shall we go?’
+      the drone E. H. Tersono said chirpily. Its ceramic casing was surrounded
+      by a healthy <b>pink</b> glow.”
+
+  <li>Page 316 (pink/blushed): “Ziller stuck his big black nose up towards
+    Tersono’s <b>pink</b>-<b>blushed</b> ceramic casing, causing the drone to
+    shrink back from him. ‘I do not believe you,’ he told it.”
+
+  <li>Page 316 (rainbow → confusion): “‘Well…’ The drone’s aura field suddenly
+    rainbowed with <i>confusion</i>.”
+
+  <li>Page 316: (→ anger/frustration): “‘Well, of course I would!’ the machine
+    said, wobbling in the air with what looked
+    like <i>anger</i>, <i>frustration</i> or both. Its aura field looked
+    confused.”
+
+  <li>Page 316 (muddy cream → embarrassment): “The Chelgrian turned sharply to
+    the machine floating at his side and glared at it. He held one finger to
+    his lips and shook it. The drone went
+    <b>muddy cream</b> with <i>embarrassment</i>. ‘I am talking to you by directly
+    vibrating the inner membrane of your ear. There is no possibility that the
+    animal you–’”
+
+ <li>Page 317 (blanched → anger, grey → frustration, purple → contrition,
+   yellow-green → mellowness/friendliness, red → a joke): “The drone’s
+   aura <b>blanched</b> briefly with <i>anger</i>, then settled
+   to <b>grey</b> <i>frustration</i> mixed with spots
+   of <b>purple</b> <i>contrition</i>. It quickly rippled
+   into <b>yellow-green</b>, indicating <i>mellowness and friendliness</i>,
+   hatched with bands of <b>red</b> to show it was taking this as a bit of <i>a
+   joke</i>.”
+
+ <li>Page 318? (grey → frustration): “He woke up spluttering in the shallows,
+   being dragged on his back towards the river bank. He looked up and behind
+   and saw Tersono pulling him with a maniple field coloured <b>grey</b> with
+   <i>frustration</i>.”
+
+ <li>Page 318? (grey): “The drone flashed <b>grey</b> again. ‘Of course I’m
+   upset, Cr Ziller! You nearly killed yourself there! You’ve always been so
+   dismissive, even contemptuous, of such dangerous pastimes. What is the
+   matter with you?’”
+
+  <li>Page 324 (white → anger): “‘Will you stop it?’ screeched the drone. Its
+    aura field burned <b>white</b> with <i>anger</i>.”
+
+  <li>Page 324 (grey): “‘You did make an exhibit of yourself!’ the machine
+    shouted. ‘That simian in the trees by the river was Marel Pomiheker;
+    news-feeder, guerrilla journalist, media-raptor and all-round data-hound.
+    Look!’ The drone swept away from the screen and pointed a
+    strobing <b>grey</b> field at one of the twenty-four rectangular
+    projections protruding from the screen. It showed Ziller squatting on a
+    branch, hiding up a tree in a jungle.”
+
+  <li>Page 380 (creamily rainbow → surprise/embarrassment): “The drone stopped
+    as though it had hit a wall. It flushed <b>creamily</b> <b>rainbow</b>
+    with <i>surprise</i> and <i>embarrassment</i>, then bowed in the air and
+    said, ‘Just so. Well, see you there. Ah … Yes. Goodbye.’ It thrummed
+    through the air to the doors, whisked them open and closed them quickly but
+    silently behind it.”
+</ul>
+
+
+<h3 id=2008><i>Matter</i> (2008)</h2>
+
+<p><b>FIXME:</b> This book has <i>not yet</i> been searched for drone color
+references using method outlined in <a href=#appendix>Appendix</a>. /16
+February 2026
+
+<ul>
+  <li>Page 5 (rosy → fun): “The drone’s aura fields, invisible until now,
+    flowed <b>rosily</b> for a moment or two. ‘This,’ it said, ‘should
+    be <i>fun</i>.’”
+
+  <li>Page ? (rosy → amused): “The screen displaying what the scout missile
+    could see showed a tree a hundred metres behind the last, trundling wagon.
+    The tree jerked and the top three-quarters slid at a steep angle down the
+    sloped stump that was the bottom quarter before toppling to the dust. ‘That
+    took a flick,’ the drone said, glowing briefly <b>rosy</b> again and
+    sounding <i>amused</i>. The wagons and siege engines filled the view coming
+    from the knife missile. ‘The first bit’s actually the trickiest…’”
+
+  <li>Page 78 (frosty blue): “‘We have been summoned,’ the machine said. ‘We
+    need to get to the Quonber; Jerle Batra awaits.’ Its fields flashed a
+    <b>frosty blue</b>. ‘I brought the module.’”
+
+  <li>Page ? (rosy): “It twisted itself slowly into the material as though it
+    was no more substantial than the glowing purple mass beneath. Long hanging
+    strands of hull and other material worked their way out along the little
+    machine’s body and drooped down, swaying. The drone – <b>rosily</b> glowing
+    folds of light pulsing about its body – finished by stationing itself
+    midway between the scendship’s hull and the wall of the chamber and
+    floating there for a moment. There was an alarming groaning noise and the
+    hull of the ship around the hole bulged inwards by about a hand’s span,
+    exactly as though an invisible sphere a metre across was being pressed into
+    it. The wall directly opposite made creaking, popping noises too. ”
+
+  <li>Page ? (soot black): “The door rolled silently to one side, revealing
+    utter darkness. The drone turned <b>soot black</b> and darted ahead,
+    disappearing along with the four other smaller missiles.” (<b>NOTE:</b>
+    Color used for camouflage here?)
+</ul>
+
+
+<h3 id=2010><i>Surface Detail</i> (2010)</h2>
+
+<p><b>NOTE:</b> This book has been searched for drone color references using
+method outlined in <a href=#appendix>Appendix</a>. Edition used here makes use
+of British spelling (‘grey’, ‘colour’ etc). /16 February 2026
+
+<ul>
+  <li>Page 229 (yellow, green, blue): “The machine floated in the air in front
+    of her. It was about big enough to sit comfortably on two outspread hands;
+    a cream-casinged, mostly smooth device that looked like something you’d
+    find on the work surface of an intimidatingly well-equipped kitchen and
+    wonder what its function was. It was surrounded by a vague, misty halo that
+    appeared to be various mixtures of <b>yellow</b>, <b>green</b>
+    and <b>blue</b> according to the angle. This would be its aura field – the
+    drone equivalent of facial expression and body language, there to convey
+    emotions.”
+
+  <li>Page 234 (grey-blue): “‘I see.’ The machine bobbed in the air, its aura
+    field going <b>grey-blue</b>. ‘Well, as I say, while we’re aboard ship…
+    Excuse me.’”
+
+  <li>Page 241 (pink): “The little drone’s aura field glowed an agreeable
+    <b>pink</b>. It turned smoothly back to Lededje. ‘As we all agree, then, I
+    shall be coming with you, still charged, of course, with protecting you—’”
+
+  <li>Page 241 (grey): “‘Mostly from yourself,’ Demeisen said with a quick
+    grin. He bowed his head and held up one hand as the little cream-coloured
+    drone’s field flashed a bright <b>grey</b>. ‘Sorry,’ he said.”
+
+  <li>Page 214 (grey): “Kallier-Falpise’s fields went frosty <b>grey</b>
+    again. ‘You did not ask me if I consent to being Displaced when a far
+    more intrinsically safe method of transferring us between ships exists to
+    hand.’”
+
+  <li>Page 214? (yellow-orange, white → anger): The boxy-looking ship-drone
+    used its own light effector unit to administer the equivalent of a slap.
+    Kallier-Falpise trembled against the ceiling fixtures, then dropped,
+    side-slipping. It flashed a strident <b>yellow-orange</b> for an instant,
+    then it seemed to shake itself. It straightened, floating down to the same
+    level as the ship-drone, its aura field glowing <b>white</b>
+    with <i>anger</i>.
+
+  <li>Page ? (blue → formal; green → good humour): “‘Allow me,’ said the ship’s
+    drone, taking the offered device before Yime could accept it. They were
+    still under the ship itself, so sheltered from the rain for the moment. It
+    was so dark the main light came from the big drone’s aura field, which
+    was <i>formal</i> <b>blue</b> mixed with <b>green</b> <i>good humour</i>.”
+
+  <li>Page ? (blueish, pink): “Yime sighed, put her drink down and sat back,
+    fingers interlocked over her midriff. ‘And I’m sure I shall continue not to
+    until you enlighten me. Or I can talk to somebody else on your team who is
+    more…’ She paused. ‘Plausible,’ she said. The drone’s <b>blueish</b> aura
+    field coloured a subtle shade of <b>pink</b>.”
+
+  <li>Page ? (pink): “The drone made a throat-clearing noise. ‘Whoever they
+    were they either died in a fire or were cremated,’ it said. ‘Probably the
+    latter; high-temperature combustion, probably few impurities. Hard to tell
+    – this has been cleaned and analysed. At first quite crudely and then only
+    a little clumsily.’ The machine swivelled in the air as though looking at
+    Veppers. ‘By Mr. Veppers’ techs and then by our Jhlupian friends, I’d
+    guess.’ The barely visible haze around the machine had turned
+    vaguely <b>pink</b>. Veppers ignored it.”
+
+  <li>Page ? (blue): “Meanwhile the drone Olfes-Hresh had snapped through the
+    air to her other side, whipping a <b>blue</b>-glowing force field between
+    her torso and Veppers’ and gripping her left arm, keeping that hand held up
+    and away. Lededje heard herself make an anguished, strangling noise as she
+    tried to close her fingers round Veppers’ throat.”
+
+  <li>Page ? (ruby-red): “‘Gasslikunt!’ Liss repeated, cradled
+    in <b>ruby-red</b> fields as the drone took the child and swept away
+    towards the doors.”
+
+  <li>Page ? (purple-grey → embarrassment): “‘As did I,’ the machine said, aura
+    field <b>purple-grey</b> with <i>embarrassment</i>.”
+</ul>
+
+<h3 id=2012><i>The Hydrogen Sonata</i> (2012)</h2>
+
+<p><b>NOTE:</b> This book has been searched for drone color references using
+method outlined in <a href=#appendix>Appendix</a>. Edition used here makes use
+of British spelling (‘grey’, ‘colour’ etc). /15 February 2026
+
+<ul>
+  <li>Page 244 (blue-grey): “The little drone suddenly developed an aura field,
+    turning a crisp <b>blue-grey</b>. ‘A mount? An animal?’ it said. ‘Four
+    days? I had rather envisaged Displacing you at sub-millimetre accuracy,
+    precisely where you want to go.’”
+
+  <li>Page 245 (red → amused): “The ship drone’s aura
+    flashed <i>amused</i> <b>red</b> then disappeared. ‘I’ll see how that
+    breakfast’s coming along.’”
+</ul>
+
+
+<h2 id=appendix>Appendix</h1>
+
+<p>The text used was extracted from the e-book versions of all works in <i>The
+Culture</i> series.—The novels <i>The Bridge</i> (1986) and <i>Inversions</i>
+(1998) were also included (they both peripherally contain references to The
+Culture), however neither of them turned out to mention drone aura fields or
+their color.
+
+<p>Initially I took notes while reading the novels but in January 2026 I
+decided it was time for a more thorough approach.
+
+<p>A list of color terms was created from my earlier notes. Thereafter I used
+an LLM to find additional likely color terms (adding, among others: <i>aqua,
+charcoal, coral, lavender, lilac, navy, ochre, salmon, teal, taupe, maroon,
+sand, tan</i>—most of which do not occur in the text). I also manually added
+color terms as I found them during the search of the text (<i>agate, azure,
+blond, blonde, cerulean, dark, lime, silvery, soot</i>).
+
+<p>The final list of colors used was:
+agate,
+aqua,
+aquamarine,
+azure,
+beige,
+black,
+blond,
+blonde,
+blue,
+blueish,<!--DONE-->
+bronze,
+brown,
+burgundy,
+cerulean,<!--DONE-->
+charcoal,
+colored,
+copper,
+coral,
+cream,
+cream,
+crimson,
+cyan,
+dark,
+dim,
+dun,
+gold,
+gray,
+green,
+grey,
+gun-metal,
+gunmetal,
+indigo,
+lavender,
+lilac,
+lime,
+magenta,
+maroon,
+mint,
+mirror,
+mud,
+muddy,
+navy,
+ochre,
+olive,
+orange,
+orange,
+pale,
+peach,
+pink,
+purple,
+rainbow,
+rainbowed,
+red,
+rosy,
+ruby,
+ruddy,
+salmon,
+sand,
+silver,
+silvery, <!--FIXME: check-->
+sky,
+tan,
+taupe,
+teal,
+turquoise,
+violet,
+wan,
+white,
+yellow.
+
+<p>The above colors are combined into a regular
+expression <tt>\b(COLOR1|COLOR2|…)(er|ish|s|y)?\b</tt>.
 
 <!-- ==================== Copyright etc. ==================== -->
- <center><table cellpadding=0 cellspacing=0 border=0>
-<tr><td valign=bottom colspan=3><hr noshade></td></tr><tr><td>         </td>
-<td align=center><b>Written by
-<a href="mailto:zrajm@klingonska.org">zrajm,</a> Uppsala, 1998–2014</b></td>
-<td>         </td></tr><tr><td valign=top colspan=3><hr noshade></td></tr>
-</table></center>
 
-</body></html>
+<footer>
+  Written by
+  <a href="mailto:zrajm@klingonska.org">zrajm</a>, Uppsala, 1998–2026
+</footer>
+</body>
+</html>
