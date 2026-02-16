@@ -1,0 +1,23 @@
+-*- org -*-
+
+* Command to search for references
+  less --use-backslash +"/\\\\b($(<total LL RR 's#\n#|#g'))\\\b" 2010-surface_detail.UNFORM.txt 
+* Add list of colors from "Iain Banks FAQ 4.3"
+  Archived here: https://archive.is/https://www.iainbanksfaq.f9.co.uk/index.htm
+
+  + yellow-green - "Mellow approachability"
+  + green - Friendliness
+  + pink - Amusement
+  + red - Amusement/pleasure
+  + red (pulsing) - Laughter
+  + deep red - Pleasure
+  + orange (pulsing) - SDED "Sick Drone in Extreme Distress"
+  + olive-purple - Awe
+  + purple - Contrition
+  + blue - Formal
+  + brown - Displeasure
+  + grey - Displeased
+  + gunmetal - Confusion
+  + silver - Do not disturb
+  + white - Angry
+* [eof]
