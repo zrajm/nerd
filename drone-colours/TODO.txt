@@ -1,5 +1,8 @@
 -*- org -*-
 
+* Find interview comments from Banks on this topic
+  Among other things he has said that he updates/corrects older edition of
+  books. Do we need to care about this in the data?
 * Command to search for references
   less --use-backslash +"/\\\\b($(<total LL RR 's#\n#|#g'))\\\b" 2010-surface_detail.UNFORM.txt 
 * Add list of colors from "Iain Banks FAQ 4.3"
